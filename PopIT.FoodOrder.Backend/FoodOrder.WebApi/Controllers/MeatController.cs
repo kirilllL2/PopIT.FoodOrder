@@ -14,11 +14,7 @@ namespace FoodOrder.WebApi.Controllers
 {
     [Route("api/[controller]")]
     public class MeatController : BaseController
-    {
-        private readonly IMapper _mapper;
-
-        public MeatController(IMapper mapper) => _mapper = mapper;
-        
+    {        
         [HttpGet]
         public async Task<ActionResult<MeatListVm>> GetAllMeats()
         {
@@ -39,9 +35,9 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<Guid>> CreateMeat(CreateMeatDto createNoteDto)
+        public async Task<ActionResult<Guid>> CreateMeat(CreateMeatDto createMeatDto)
         {
-            var command = _mapper.Map<CreateMeatCommand>(createNoteDto);
+            var command = Mapper.Map<CreateMeatCommand>(createMeatDto);
             var noteId = await Mediator.Send(command);
             return Ok(noteId);
         }
@@ -49,7 +45,7 @@ namespace FoodOrder.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateMeat(Guid id, UpdateMeatDto updateMeatDto)
         {
-            var command = _mapper.Map<UpdateMeatCommand>(updateMeatDto);
+            var command = Mapper.Map<UpdateMeatCommand>(updateMeatDto);
             command.Id = id;
             await Mediator.Send(command);
             return NoContent();
