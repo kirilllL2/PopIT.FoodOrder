@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FoodOrder.Domain
+namespace FoodOrder.Domain.Entities
 {
 	public class Meat
 	{

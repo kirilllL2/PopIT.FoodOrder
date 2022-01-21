@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FoodOrder.Domain
+namespace FoodOrder.Domain.Entities
 {
 	public class Order
 	{
