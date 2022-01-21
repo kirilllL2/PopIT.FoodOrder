@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
+using FoodOrder.WebApi.Middleware;
 
 namespace FoodOrder.WebApi
 {
@@ -52,6 +53,7 @@ namespace FoodOrder.WebApi
 				app.UseDeveloperExceptionPage();
 			}
 
+			app.UseCustomExceptionHandler();
 			app.UseRouting();
 			app.UseHttpsRedirection();
 			app.UseCors("AllowAll");
