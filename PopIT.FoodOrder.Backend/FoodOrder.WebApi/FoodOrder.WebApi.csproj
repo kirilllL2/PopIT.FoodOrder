@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FoodOrder.Application\FoodOrder.Application.csproj" />
+    <ProjectReference Include="..\FoodOrder.Persistence\FoodOrder.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
