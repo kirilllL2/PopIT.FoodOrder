@@ -2,6 +2,7 @@
 using FoodOrder.Application.Common.Exceptions;
 using FoodOrder.Tests.Common;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -43,7 +44,7 @@ namespace FoodOrder.Tests.Beverages.Commands
 				await handler.Handle(
 					new UpdateBeverageCommand
 					{
-						Id = System.Guid.NewGuid()
+						Id = Guid.NewGuid()
 					}, CancellationToken.None));
 		}
 	}
