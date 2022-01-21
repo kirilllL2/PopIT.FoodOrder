@@ -7,7 +7,7 @@ namespace FoodOrder.Domain.Entities
 		public Guid UserId { get; set; }
 		public Guid Id { get; set; }
 		public DateTime OrderTime { get; set; }
-		public bool IsСompleted { get; set; }
+		public bool IsCompleted { get; set; }
 
 		public Guid BeverageId { get; set; }
 		public Beverage Beverage { get; set; }
