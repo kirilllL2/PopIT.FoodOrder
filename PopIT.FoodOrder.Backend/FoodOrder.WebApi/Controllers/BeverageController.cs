@@ -36,8 +36,8 @@ namespace FoodOrder.WebApi.Controllers
         public async Task<ActionResult<Guid>> CreateBeverage(CreateBeverageDto createBeverageDto)
         {
             var command = Mapper.Map<CreateBeverageCommand>(createBeverageDto);
-            var noteId = await Mediator.Send(command);
-            return Ok(noteId);
+            var beverageId = await Mediator.Send(command);
+            return Ok(beverageId);
         }
 
         [HttpPut("{id}")]

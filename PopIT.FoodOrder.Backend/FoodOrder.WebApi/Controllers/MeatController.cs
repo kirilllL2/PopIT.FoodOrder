@@ -38,8 +38,8 @@ namespace FoodOrder.WebApi.Controllers
         public async Task<ActionResult<Guid>> CreateMeat(CreateMeatDto createMeatDto)
         {
             var command = Mapper.Map<CreateMeatCommand>(createMeatDto);
-            var noteId = await Mediator.Send(command);
-            return Ok(noteId);
+            var meatId = await Mediator.Send(command);
+            return Ok(meatId);
         }
         
         [HttpPut("{id}")]
