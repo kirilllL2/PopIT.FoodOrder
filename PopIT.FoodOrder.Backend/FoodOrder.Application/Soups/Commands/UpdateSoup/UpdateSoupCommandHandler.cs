@@ -7,24 +7,24 @@ using FoodOrder.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FoodOrder.Application.Meats.Commands.UpdateMeat
+namespace FoodOrder.Application.Soups.Commands.UpdateSoup
 {
-    public class UpdateMeatCommandHandler : IRequestHandler<UpdateMeatCommand>
+    public class UpdateSoupCommandHandler : IRequestHandler<UpdateSoupCommand>
     {
         private readonly IFoodOrderDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public UpdateMeatCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
+        public UpdateSoupCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
-        
-        public async Task<Unit> Handle(UpdateMeatCommand request, CancellationToken cancellationToken)
+
+        public async Task<Unit> Handle(UpdateSoupCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Meats.FirstOrDefaultAsync(meat =>
-                meat.Id == request.Id, cancellationToken);
+            var entity = await _dbContext.Soups.FirstOrDefaultAsync(soup =>
+                soup.Id == request.Id, cancellationToken);
 
             if (entity == null)
             {
-                throw new EntityIdNotFoundException(nameof(Meat), request.Id);
+                throw new EntityIdNotFoundException(nameof(Soup), request.Id);
             }
 
             _mapper.Map(request, entity);

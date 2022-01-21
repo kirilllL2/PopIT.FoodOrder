@@ -13,8 +13,7 @@ namespace FoodOrder.Application.Meats.Commands.CreateMeat
         private readonly IFoodOrderDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateMeatCommandHandler(IFoodOrderDbContext dbContext,
-            IMapper mapper) =>
+        public CreateMeatCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
         
         public async Task<Guid> Handle(CreateMeatCommand request, CancellationToken cancellationToken)

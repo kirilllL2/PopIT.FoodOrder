@@ -14,13 +14,13 @@ namespace FoodOrder.Application.Meats.Queries.GetMeatDetails
         private readonly IFoodOrderDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetMeatDetailsQueryHandler(IFoodOrderDbContext dbContext,
-            IMapper mapper) => (_dbContext, _mapper) = (dbContext, mapper);
+        public GetMeatDetailsQueryHandler(IFoodOrderDbContext dbContext, IMapper mapper) => 
+            (_dbContext, _mapper) = (dbContext, mapper);
         
         public async Task<MeatDetailsVm> Handle(GetMeatDetailsQuery request, CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Meats
-                .FirstOrDefaultAsync(note => note.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(meat => meat.Id == request.Id, cancellationToken);
 
             if (entity == null)
             {
