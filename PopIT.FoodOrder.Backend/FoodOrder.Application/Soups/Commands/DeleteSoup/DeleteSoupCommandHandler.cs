@@ -12,7 +12,7 @@ namespace FoodOrder.Application.Soups.Commands.DeleteSoup
     {
         private readonly IFoodOrderDbContext _dbContext;
         
-        public DeleteSoupCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
+        public DeleteSoupCommandHandler(IFoodOrderDbContext dbContext) =>
             _dbContext = dbContext;
         
         public async Task<Unit> Handle(DeleteSoupCommand request, CancellationToken cancellationToken)
