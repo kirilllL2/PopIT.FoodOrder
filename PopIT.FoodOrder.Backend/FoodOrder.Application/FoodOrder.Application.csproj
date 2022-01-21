@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
   </ItemGroup>
 
@@ -14,8 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Meat\Commands\CreateMeat" />
-    <Folder Include="Meat\Queries" />
+    <Folder Include="Meats\Commands\CreateMeat" />
+    <Folder Include="Meats\Commands\DeleteMeat" />
+    <Folder Include="Meats\Commands\UpdateMeat" />
+    <Folder Include="Meats\Queries\GetMeatList" />
+    <Folder Include="Meats\Queries\GetMeatDetails" />
   </ItemGroup>
 
 </Project>

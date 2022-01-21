@@ -12,16 +12,29 @@ namespace FoodOrder.Application.Common.Mappings
 
 		private void ApplyMappingsFromAssembly(Assembly assembly)
 		{
-			var types = assembly.GetExportedTypes()
+			var typesTo = assembly.GetExportedTypes()
 				.Where(type => type.GetInterfaces()
-				.Any(i => i.IsGenericType 
-						&& i.GetGenericTypeDefinition() == typeof(IMapWith<>)))
+				.Any(i => i.IsGenericType
+						&& i.GetGenericTypeDefinition() == typeof(IMapTo<>)))
 				.ToList();
 
-			foreach (var type in types)
+			foreach (var type in typesTo)
 			{
 				var instance = Activator.CreateInstance(type);
-				var methodInfo = type.GetMethod("Mapping");
+				var methodInfo = type.GetMethod("MapTo");
+				methodInfo?.Invoke(instance, new object[] { this });
+			}
+			
+			var typesFrom = assembly.GetExportedTypes()
+							.Where(type => type.GetInterfaces()
+							.Any(i => i.IsGenericType
+									&& i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
+							.ToList();
+
+			foreach (var type in typesFrom)
+			{
+				var instance = Activator.CreateInstance(type);
+				var methodInfo = type.GetMethod("MapFrom");
 				methodInfo?.Invoke(instance, new object[] { this });
 			}
 		}
