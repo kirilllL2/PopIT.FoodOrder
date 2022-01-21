@@ -2,9 +2,8 @@
 
 namespace FoodOrder.Application.Common.Mappings
 {
-	public interface IMapFrom<T>
+	public interface IMapWith<T>
 	{
-		void MapFrom(Profile profile) =>
-			profile.CreateMap(typeof(T), GetType());
+		void Mapping(Profile profile);
 	}
 }
