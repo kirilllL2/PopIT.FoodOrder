@@ -4,6 +4,7 @@ using FoodOrder.Application.Soups.Commands.UpdateSoup;
 using FoodOrder.Application.Soups.Queries.GetSoupDetails;
 using FoodOrder.Application.Soups.Queries.GetSoupList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateSoup(CreateSoupDto createSoupDto)
         {
             var command = Mapper.Map<CreateSoupCommand>(createSoupDto);
@@ -41,6 +43,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateSoup(Guid id, UpdateSoupDto updateSoupDto)
         {
             var command = Mapper.Map<UpdateSoupCommand>(updateSoupDto);
@@ -50,6 +53,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteSoup(Guid id)
         {
             var command = new DeleteSoupCommand

@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using FoodOrder.WebApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FoodOrder.WebApi
 {
@@ -43,6 +44,18 @@ namespace FoodOrder.WebApi
 					policy.AllowAnyOrigin();
 				});
 			});
+
+			services.AddAuthentication(config =>
+			{
+				config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			})
+				.AddJwtBearer("Bearer", options =>
+				{
+					options.Authority = "http://localhost:44397/";
+					options.Audience = "FoodOrderWebAPI";
+					options.RequireHttpsMetadata = false;
+				});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +70,8 @@ namespace FoodOrder.WebApi
 			app.UseRouting();
 			app.UseHttpsRedirection();
 			app.UseCors("AllowAll");
+			app.UseAuthentication();
+			app.UseAuthorization();
 
 			app.UseEndpoints(endpoints =>
 			{

@@ -7,6 +7,7 @@ using FoodOrder.Application.Meats.Commands.UpdateMeat;
 using FoodOrder.Application.Meats.Queries.GetMeatDetails;
 using FoodOrder.Application.Meats.Queries.GetMeatList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -35,6 +36,7 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateMeat(CreateMeatDto createMeatDto)
         {
             var command = Mapper.Map<CreateMeatCommand>(createMeatDto);
@@ -43,6 +45,7 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateMeat(Guid id, UpdateMeatDto updateMeatDto)
         {
             var command = Mapper.Map<UpdateMeatCommand>(updateMeatDto);
@@ -52,6 +55,7 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteMeat(Guid id)
         {
             var command = new DeleteMeatCommand

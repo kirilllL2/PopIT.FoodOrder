@@ -4,6 +4,7 @@ using FoodOrder.Application.Beverages.Commands.UpdateBeverage;
 using FoodOrder.Application.Beverages.Queries.GetBeverageDetails;
 using FoodOrder.Application.Beverages.Queries.GetBeverageList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateBeverage(CreateBeverageDto createBeverageDto)
         {
             var command = Mapper.Map<CreateBeverageCommand>(createBeverageDto);
@@ -41,6 +43,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateBeverage(Guid id, UpdateBeverageDto updateBeverageDto)
         {
             var command = Mapper.Map<UpdateBeverageCommand>(updateBeverageDto);

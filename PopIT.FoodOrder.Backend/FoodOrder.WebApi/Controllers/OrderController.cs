@@ -5,6 +5,7 @@ using FoodOrder.Application.Orders.Commands.CreateOrder;
 using FoodOrder.Application.Orders.Queries.GetOrderDetails;
 using FoodOrder.Application.Orders.Queries.GetOrderList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FoodOrder.WebApi.Controllers
@@ -13,6 +14,7 @@ namespace FoodOrder.WebApi.Controllers
     public class OrderController : BaseController
     {
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<OrderListVm>> GetAllOrders()
         {
             var query = new GetOrderListQuery();
@@ -21,6 +23,7 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<OrderListVm>> GetOrderById(Guid id)
         {
             var query = new GetOrderDetailsQuery
@@ -33,6 +36,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateOrder(CreateOrderDto createOrderDto)
         {
             var command = Mapper.Map<CreateOrderCommand>(createOrderDto);
@@ -42,6 +46,7 @@ namespace FoodOrder.WebApi.Controllers
         }
         
         [HttpPut("{id}/completed")]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateOrder(Guid id)
         {
             var command = new CompleteOrderCommand()

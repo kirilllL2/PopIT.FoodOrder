@@ -4,6 +4,7 @@ using FoodOrder.Application.Garnishes.Commands.UpdateGarnish;
 using FoodOrder.Application.Garnishes.Queries.GetGarnishDetails;
 using FoodOrder.Application.Garnishes.Queries.GetGarnishList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Guid>> CreateGarnish(CreateGarnishDto createGarnishDto)
         {
             var command = Mapper.Map<CreateGarnishCommand>(createGarnishDto);
@@ -41,6 +43,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> UpdateGarnish(Guid id, UpdateGarnishDto updateGarnishDto)
         {
             var command = Mapper.Map<UpdateGarnishCommand>(updateGarnishDto);
@@ -50,6 +53,7 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public async Task<IActionResult> DeleteGarnish(Guid id)
         {
             var command = new DeleteGarnishCommand
