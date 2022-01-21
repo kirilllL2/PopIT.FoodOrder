@@ -2,6 +2,7 @@
 using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
+using FluentValidation;
 using FoodOrder.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
 
@@ -32,6 +33,10 @@ namespace FoodOrder.WebApi.Middleware
             var result = string.Empty;
             switch(exception)
             {
+                case ValidationException validationException:
+                    code = HttpStatusCode.BadRequest;
+                    result = JsonSerializer.Serialize(validationException.Errors);
+                    break;
                 case EntryPointNotFoundException:
                     code = HttpStatusCode.NotFound;
                     break;
