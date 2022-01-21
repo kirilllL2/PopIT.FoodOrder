@@ -2,7 +2,7 @@
 
 namespace FoodOrder.Application.Meats.Queries.GetMeatList
 {
-    public class GetNoteListQuery : IRequest<MeatListVm>
+    public class GetMeatListQuery : IRequest<MeatListVm>
     {
         
     }
