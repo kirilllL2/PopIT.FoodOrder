@@ -3,15 +3,16 @@ using FoodOrder.Application.Common.Mappings;
 using FoodOrder.Application.Interfaces;
 using FoodOrder.Persistence;
 using System;
+using Xunit;
 
 namespace FoodOrder.Tests.Common
 {
-	public class TestCommandBase : IDisposable
+	public class QueryTestFixture : IDisposable
 	{
-		protected readonly FoodOrderDbContext Context;
-		protected readonly IMapper Mapper;
+		public FoodOrderDbContext Context;
+		public IMapper Mapper;
 
-		public TestCommandBase()
+		public QueryTestFixture()
 		{
 			Context = FoodOrderContextFactory.Create();
 			
@@ -25,4 +26,7 @@ namespace FoodOrder.Tests.Common
 
 		public void Dispose() => FoodOrderContextFactory.Destroy(Context);
 	}
+
+	[CollectionDefinition("QueryCollection")]
+	public class QueryCollection : ICollectionFixture<QueryTestFixture> { }
 }
