@@ -22,7 +22,7 @@ namespace FoodOrder.Application.Beverages.Commands.CreateBeverage
 		{
 			var beverage = _mapper.Map<Beverage>(request);
 
-			await _dbContext.Beverages.AddAsync(beverage);
+			await _dbContext.Beverages.AddAsync(beverage, cancellationToken);
 			await _dbContext.SaveChangesAsync(cancellationToken);
 
 			return beverage.Id;
