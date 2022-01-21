@@ -14,6 +14,7 @@ namespace FoodOrder.Application.Orders.Queries.GetOrderDetails
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public DateTime OrderTime { get; set; }
+        public bool IsCompleted { get; set; }
         public decimal TotalPrice { get; set; }
         public BeverageDetailsVm Beverage { get; set; }
         public GarnishDetailsVm Garnish { get; set; }
