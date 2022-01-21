@@ -6,26 +6,26 @@ using FoodOrder.Application.Interfaces;
 using FoodOrder.Domain.Entities;
 using MediatR;
 
-namespace FoodOrder.Application.Meats.Commands.DeleteMeat
+namespace FoodOrder.Application.Soups.Commands.DeleteSoup
 {
-    public class DeleteMeatCommandHandler : IRequestHandler<DeleteMeatCommand>
+    public class DeleteSoupCommandHandler : IRequestHandler<DeleteSoupCommand>
     {
         private readonly IFoodOrderDbContext _dbContext;
-
-        public DeleteMeatCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
+        
+        public DeleteSoupCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
             _dbContext = dbContext;
-
-        public async Task<Unit> Handle(DeleteMeatCommand request, CancellationToken cancellationToken)
+        
+        public async Task<Unit> Handle(DeleteSoupCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _dbContext.Meats
+            var entity = await _dbContext.Soups
                 .FindAsync(new object[] { request.Id }, cancellationToken);
 
             if (entity == null)
             {
-                throw new EntityIdNotFoundException(nameof(Meat), request.Id);
+                throw new EntityIdNotFoundException(nameof(Soup), request.Id);
             }
 
-            _dbContext.Meats.Remove(entity);
+            _dbContext.Soups.Remove(entity);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
