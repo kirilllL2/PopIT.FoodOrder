@@ -9,23 +9,23 @@ using FoodOrder.Domain.Entities;
 
 namespace FoodOrder.Application.Orders.Queries.GetOrderDetails
 {
-    public class OrderDetailsVm : IMapFrom<Order>
+    public class OrderDetailsVm : IMapWith<Order>
     {
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public DateTime OrderTime { get; set; }
+        public bool IsCompleted { get; set; }
         public decimal TotalPrice { get; set; }
         public BeverageDetailsVm Beverage { get; set; }
         public GarnishDetailsVm Garnish { get; set; }
         public MeatDetailsVm Meat { get; set; }
         public SoupDetailsVm Soup { get; set; }
 
-        public void MapFrom(Profile profile)
-        {
+		public void Mapping(Profile profile)
+		{
             profile.CreateMap<Order, OrderDetailsVm>()
-                .ForMember(r => r.TotalPrice, 
-                    opt => opt.MapFrom(o => 
-                        o.Meat.Price + o.Soup.Price + o.Garnish.Price + o.Beverage.Price));
+                .ForMember(r => r.TotalPrice,
+                    opt => opt.MapFrom(o => o.Meat.Price + o.Soup.Price + o.Garnish.Price + o.Beverage.Price));
         }
-    }
+	}
 }

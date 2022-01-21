@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FoodOrder.Application.Orders.Commands.CreateOrder
 {
-    public class CreateOrderCommand : IRequest<Guid>, IMapTo<Order>
+    public class CreateOrderCommand : IRequest<Guid>, IMapWith<Order>
     {
         public Guid UserId { get; set; }
         public Guid BeverageId { get; set; }
@@ -14,12 +14,12 @@ namespace FoodOrder.Application.Orders.Commands.CreateOrder
         public Guid MeatId { get; set; }
         public Guid SoupId { get; set; }
 
-        public void MapTo(Profile profile)
-        {
+		public void Mapping(Profile profile)
+		{
             profile.CreateMap<CreateOrderCommand, Order>()
-                .ForMember(o => o.OrderTime, 
+                .ForMember(o => o.OrderTime,
                     opt => opt.MapFrom(_ => DateTime.Now))
-                .ForMember(o => o.IsCompleted, 
+                .ForMember(o => o.IsCompleted,
                     opt => opt.MapFrom(_ => false));
         }
     }

@@ -1,19 +1,18 @@
 ﻿using System;
 using AutoMapper;
 using FoodOrder.Application.Common.Mappings;
-using FoodOrder.Domain.Entities;
+using FoodOrder.Application.Meats.Commands.UpdateMeat;
 
-namespace FoodOrder.Application.Soups.Queries.GetSoupList
+namespace FoodOrder.WebApi.Models
 {
-    public class SoupLookupDto : IMapWith<Soup>
+    public class UpdateMeatDto : IMapWith<UpdateMeatCommand>
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<Soup, SoupLookupDto>();
+			profile.CreateMap<UpdateMeatDto, UpdateMeatCommand>();
 		}
 	}
 }
