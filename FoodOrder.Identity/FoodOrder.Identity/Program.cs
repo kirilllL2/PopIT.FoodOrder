@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FoodOrder.Identity.Data;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace FoodOrder.Identity
 {
@@ -13,7 +11,25 @@ namespace FoodOrder.Identity
 	{
 		public static void Main(string[] args)
 		{
-			CreateHostBuilder(args).Build().Run();
+			var host = CreateHostBuilder(args).Build();
+
+			using (var scope = host.Services.CreateScope())
+			{
+				var serverProvider = scope.ServiceProvider;
+
+				try
+				{
+					var context = serverProvider.GetRequiredService<AuthDbContext>();
+					DbInitialize.Initialize(context);
+				}
+				catch (Exception e)
+				{
+					var logger = serverProvider.GetRequiredService<ILogger<Program>>();
+					logger.LogError(e, "An error occurred while app initialization");
+				}
+			}
+			
+			host.Run();
 		}
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
