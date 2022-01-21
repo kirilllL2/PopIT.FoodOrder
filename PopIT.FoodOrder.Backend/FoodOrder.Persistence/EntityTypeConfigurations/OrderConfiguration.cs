@@ -20,19 +20,19 @@ namespace FoodOrder.Persistence.EntityTypeConfigurations
 				.IsRequired();
 
 			builder.HasOne(o => o.Beverage)
-				.WithMany(b => b.Orders)
+				.WithMany()
 				.HasForeignKey(o => o.BeverageId);
 
 			builder.HasOne(o => o.Garnish)
-				.WithMany(g => g.Orders)
+				.WithMany()
 				.HasForeignKey(o => o.GarnishId);
 
 			builder.HasOne(o => o.Meat)
-				.WithMany(m => m.Orders)
+				.WithMany()
 				.HasForeignKey(o => o.MeatId);
 
 			builder.HasOne(o => o.Soup)
-				.WithMany(s => s.Orders)
+				.WithMany()
 				.HasForeignKey(o => o.SoupId);
 		}
 	}
