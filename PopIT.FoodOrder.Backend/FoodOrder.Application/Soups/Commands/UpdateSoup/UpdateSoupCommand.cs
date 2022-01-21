@@ -6,7 +6,7 @@ using MediatR;
 
 namespace FoodOrder.Application.Soups.Commands.UpdateSoup
 {
-    public class UpdateSoupCommand : IRequest, IMapWith<Meat>
+    public class UpdateSoupCommand : IRequest, IMapWith<Soup>
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
@@ -14,7 +14,7 @@ namespace FoodOrder.Application.Soups.Commands.UpdateSoup
 
 		public void Mapping(Profile profile)
 		{
-			profile.CreateMap<UpdateSoupCommand, Meat>();
+			profile.CreateMap<UpdateSoupCommand, Soup>();
 		}
 	}
 }
