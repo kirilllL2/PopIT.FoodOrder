@@ -1,4 +1,4 @@
-﻿using FoodOrder.Domain;
+﻿using FoodOrder.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

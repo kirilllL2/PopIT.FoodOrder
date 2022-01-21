@@ -1,7 +1,7 @@
-﻿using FoodOrder.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
+using FoodOrder.Domain.Entities;
 
 namespace FoodOrder.Application.Interfaces
 {

@@ -1,5 +1,5 @@
 ﻿using FoodOrder.Application.Interfaces;
-using FoodOrder.Domain;
+using FoodOrder.Domain.Entities;
 using FoodOrder.Persistence.EntityTypeConfigurations;
 using Microsoft.EntityFrameworkCore;
 
