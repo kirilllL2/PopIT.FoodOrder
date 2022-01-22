@@ -9,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using FoodOrder.WebApi.Middleware;
+using System;
+using System.IO;
 
 namespace FoodOrder.WebApi
 {
@@ -43,6 +45,13 @@ namespace FoodOrder.WebApi
 					policy.AllowAnyOrigin();
 				});
 			});
+
+			services.AddSwaggerGen(config =>
+			{
+				var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+				var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+				config.IncludeXmlComments(xmlPath);
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +62,12 @@ namespace FoodOrder.WebApi
 				app.UseDeveloperExceptionPage();
 			}
 
+			app.UseSwagger();
+			app.UseSwaggerUI(config =>
+			{ 
+				config.RoutePrefix = string.Empty;
+				config.SwaggerEndpoint("swagger/v1/swagger.json", "FoodOrder API");
+			});
 			app.UseCustomExceptionHandler();
 			app.UseRouting();
 			app.UseHttpsRedirection();
