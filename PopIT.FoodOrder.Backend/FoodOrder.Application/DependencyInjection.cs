@@ -16,6 +16,9 @@ namespace FoodOrder.Application
 			services.AddTransient(typeof(IPipelineBehavior<,>),
 				typeof(ValidationBehavior<,>));
 
+			services.AddTransient(typeof(IPipelineBehavior<,>),
+				typeof(LoggingBehavior<,>));
+
 			return services;
 		}
 	}
