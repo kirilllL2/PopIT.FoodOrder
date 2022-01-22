@@ -22,7 +22,8 @@ namespace FoodOrder.Identity.Data
             builder.Entity<IdentityUserLogin<string>>(entity => entity.ToTable(name: "UserLogins"));
             builder.Entity<IdentityUserToken<string>>(entity => entity.ToTable(name: "UserTokens"));
             builder.Entity<IdentityRoleClaim<string>>(entity => entity.ToTable(name: "RoleClaims"));
-            
+
+            builder.ApplyConfiguration(new AppUserConfiguration());
         }
     }
 }

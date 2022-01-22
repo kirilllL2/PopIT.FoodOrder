@@ -24,6 +24,7 @@ namespace FoodOrder.Identity.Controllers
             _interactionService = interactionService;
         }
 
+        [HttpGet]
         public IActionResult Login(string returnUrl)
         {
             var viewModel = new LoginViewModel()
@@ -67,7 +68,7 @@ namespace FoodOrder.Identity.Controllers
                 ReturnUrl = returnUrl
             };
 
-            return View(returnUrl);
+            return View(viewModel);
         }
 
         [HttpPost]
