@@ -4,6 +4,7 @@ using FoodOrder.Application.Beverages.Commands.UpdateBeverage;
 using FoodOrder.Application.Beverages.Queries.GetBeverageDetails;
 using FoodOrder.Application.Beverages.Queries.GetBeverageList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -71,7 +72,8 @@ namespace FoodOrder.WebApi.Controllers
 		/// <returns>Returns id (guid)</returns>
 		/// <response code="200">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
-		[HttpPost]
+    [HttpPost]
+		[Authorize]
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		public async Task<ActionResult<Guid>> CreateBeverage(CreateBeverageDto createBeverageDto)
@@ -98,6 +100,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="204">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpPut("{id}")]
+    [Authorize]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		public async Task<IActionResult> UpdateBeverage(Guid id, UpdateBeverageDto updateBeverageDto)
@@ -120,6 +123,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="204">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpDelete("{id}")]
+    [Authorize]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		public async Task<IActionResult> DeleteBeverage(Guid id)

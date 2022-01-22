@@ -1,9 +1,10 @@
-﻿using FoodOrder.Application.Garnishes.Commands.CreateGarnish;
+using FoodOrder.Application.Garnishes.Commands.CreateGarnish;
 using FoodOrder.Application.Garnishes.Commands.DeleteGarnish;
 using FoodOrder.Application.Garnishes.Commands.UpdateGarnish;
 using FoodOrder.Application.Garnishes.Queries.GetGarnishDetails;
 using FoodOrder.Application.Garnishes.Queries.GetGarnishList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,25 +17,25 @@ namespace FoodOrder.WebApi.Controllers
 	[Route("api/{version:apiVersion}/[controller]")]
 	public class GarnishController : BaseController
 	{
-        /// <summary>
-		/// Gets the list of garnishes
-		/// </summary>
-		/// <remarks>
-		/// Sample request:
-		/// GET /garnish
-		/// </remarks>
-		/// <returns>Returns GarnishListVm</returns>
-		/// <response code="200">Success</response>
-		[HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<GarnishListVm>> GetAllGarnishes()
-        {
-            var query = new GetGarnishListQuery();
-            var vm = await Mediator.Send(query);
-            return Ok(vm);
-        }
+    /// <summary>
+    /// Gets the list of garnishes
+    /// </summary>
+    /// <remarks>
+    /// Sample request:
+    /// GET /garnish
+    /// </remarks>
+    /// <returns>Returns GarnishListVm</returns>
+    /// <response code="200">Success</response>
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult<GarnishListVm>> GetAllGarnishes()
+    {
+        var query = new GetGarnishListQuery();
+        var vm = await Mediator.Send(query);
+        return Ok(vm);
+    }
 
-        /// <summary>
+    /// <summary>
 		/// Gets the garnish by id
 		/// </summary>
 		/// <remarks>
@@ -45,41 +46,44 @@ namespace FoodOrder.WebApi.Controllers
 		/// <returns>Returns GarnishDetailsVm</returns>
 		/// <response code="200">Success</response>
 		[HttpGet("{id}", Name = "GetGarnishById")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<GarnishDetailsVm>> GetGarnishById(Guid id)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult<GarnishDetailsVm>> GetGarnishById(Guid id)
+    {
+        var query = new GetGarnishDetailsQuery()
         {
-            var query = new GetGarnishDetailsQuery()
-            {
-                Id = id
-            };
-            var vm = await Mediator.Send(query);
-            return Ok(vm);
-        }
+            Id = id
+        };
+        var vm = await Mediator.Send(query);
+        return Ok(vm);
+    }
 
-        /// <summary>
-		/// Creates the garnish
-		/// </summary>
-		/// <remarks>
-		/// Sample request:
-		/// POST /garnish
-		/// {
-		///     "Name": "potato",
-		///     "Price": 90
-		/// }
-		/// </remarks>
-		/// <param name="createGarnishDto">СreateGarnishDto object</param>
-		/// <returns>Returns id (guid)</returns>
-		/// <response code="200">Success</response>
-		/// <response code="401">If the user is unauthorized</response>
-		[HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult<Guid>> CreateGarnish(CreateGarnishDto createGarnishDto)
-        {
-            var command = Mapper.Map<CreateGarnishCommand>(createGarnishDto);
-            var garnishId = await Mediator.Send(command);
-            return Ok(garnishId);
-        }
+
+        
+      /// <summary>
+      /// Creates the garnish
+      /// </summary>
+      /// <remarks>
+      /// Sample request:
+      /// POST /garnish
+      /// {
+      ///     "Name": "potato",
+      ///     "Price": 90
+      /// }
+      /// </remarks>
+      /// <param name="createGarnishDto">СreateGarnishDto object</param>
+      /// <returns>Returns id (guid)</returns>
+      /// <response code="200">Success</response>
+      /// <response code="401">If the user is unauthorized</response>
+      [HttpPost]
+      [Authorize]
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+      public async Task<ActionResult<Guid>> CreateGarnish(CreateGarnishDto createGarnishDto)
+      {
+          var command = Mapper.Map<CreateGarnishCommand>(createGarnishDto);
+          var garnishId = await Mediator.Send(command);
+          return Ok(garnishId);
+      }
 
 		/// <summary>
 		/// Updates the garnish
@@ -98,6 +102,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="204">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpPut("{id}")]
+    [Authorize]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		public async Task<IActionResult> UpdateGarnish(Guid id, UpdateGarnishDto updateGarnishDto)
@@ -120,6 +125,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="204">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpDelete("{id}")]
+    [Authorize]
 		[ProducesResponseType(StatusCodes.Status204NoContent)]
 		[ProducesResponseType(StatusCodes.Status401Unauthorized)]
 		public async Task<IActionResult> DeleteGarnish(Guid id)

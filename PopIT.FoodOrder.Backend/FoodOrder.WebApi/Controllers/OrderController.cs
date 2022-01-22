@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using FoodOrder.Application.Orders.Commands.CompleteOrder;
 using FoodOrder.Application.Orders.Commands.CreateOrder;
 using FoodOrder.Application.Orders.Queries.GetOrderDetails;
 using FoodOrder.Application.Orders.Queries.GetOrderList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,6 +27,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="200">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpGet]
+    [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<OrderListVm>> GetAllOrders()
@@ -34,7 +36,6 @@ namespace FoodOrder.WebApi.Controllers
             var vm = await Mediator.Send(query);
             return Ok(vm);
         }
-
         /// <summary>
         /// Gets the order by id
         /// </summary>
@@ -47,6 +48,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <response code="200">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
         [HttpGet("{id}", Name = "GetOrderById")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<OrderDetailsVm>> GetOrderById(Guid id)
@@ -78,6 +80,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <response code="200">Success</response>
 		/// <response code="401">If the user is unauthorized</response>
 		[HttpPost]
+    [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<Guid>> CreateOrder(CreateOrderDto createOrderDto)
@@ -87,6 +90,7 @@ namespace FoodOrder.WebApi.Controllers
             var orderId = await Mediator.Send(command);
             return Ok(orderId);
         }
+
 
         /// <summary>
         /// Marks the order as completed
@@ -100,6 +104,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <response code="204">Success</response>
         /// <response code="401">If the user is unauthorized</response>
         [HttpPut("{id}/complete")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<Guid>> CompletedOrder(Guid id)

@@ -7,6 +7,7 @@ using FoodOrder.Application.Meats.Commands.UpdateMeat;
 using FoodOrder.Application.Meats.Queries.GetMeatDetails;
 using FoodOrder.Application.Meats.Queries.GetMeatList;
 using FoodOrder.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -74,6 +75,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <response code="200">Success</response>
         /// <response code="401">If the user is unauthorized</response>
         [HttpPost]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<Guid>> CreateMeat(CreateMeatDto createMeatDto)
@@ -100,6 +102,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <response code="204">Success</response>
         /// <response code="401">If the user is unauthorized</response>
         [HttpPut("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> UpdateMeat(Guid id, UpdateMeatDto updateMeatDto)
@@ -122,6 +125,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <response code="204">Success</response>
         /// <response code="401">If the user is unauthorized</response>
         [HttpDelete("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> DeleteMeat(Guid id)

@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Reflection;
 using FoodOrder.WebApi.Middleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System;
 using System.IO;
 using Swashbuckle.AspNetCore.SwaggerGen;
@@ -50,6 +51,18 @@ namespace FoodOrder.WebApi
 				});
 			});
 
+			services.AddAuthentication(config =>
+			{
+				config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+				config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+			})
+				.AddJwtBearer("Bearer", options =>
+				{
+					options.Authority = "http://localhost:44397/";
+					options.Audience = "FoodOrderWebAPI";
+					options.RequireHttpsMetadata = false;
+				});
+      
 			services.AddVersionedApiExplorer(options =>
 				options.GroupNameFormat = "'v'VVV");
 			services.AddTransient<IConfigureOptions<SwaggerGenOptions>,
@@ -81,10 +94,13 @@ namespace FoodOrder.WebApi
 					config.RoutePrefix = string.Empty;
 				}
 			});
+      
 			app.UseCustomExceptionHandler();
 			app.UseRouting();
 			app.UseHttpsRedirection();
 			app.UseCors("AllowAll");
+			app.UseAuthentication();
+			app.UseAuthorization();
 			app.UseApiVersioning();
 			app.UseEndpoints(endpoints =>
 			{
