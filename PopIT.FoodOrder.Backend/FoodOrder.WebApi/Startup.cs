@@ -14,6 +14,7 @@ using System.IO;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using FoodOrder.WebApi.Services;
 
 namespace FoodOrder.WebApi
 {
@@ -55,6 +56,9 @@ namespace FoodOrder.WebApi
 				ConfigureSwaggerOptions>();
 			services.AddSwaggerGen();
 			services.AddApiVersioning();
+
+			services.AddSingleton<ICurrentUserService, CurrentUserService>();
+			services.AddHttpContextAccessor();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
