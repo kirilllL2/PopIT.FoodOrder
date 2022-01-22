@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace FoodOrder.WebApi.Controllers
 {
+	[ApiVersion("1.0")]
 	[Produces("application/json")]
-	[Route("api/[controller]")]
+	[Route("api/{version:apiVersion}/[controller]")]
 	public class BeverageController : BaseController
 	{
 		/// <summary>

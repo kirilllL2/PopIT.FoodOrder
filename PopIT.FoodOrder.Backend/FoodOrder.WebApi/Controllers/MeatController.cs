@@ -13,8 +13,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FoodOrder.WebApi.Controllers
 {
+    [ApiVersion("1.0")]
     [Produces("application/json")]
-    [Route("api/[controller]")]
+    [Route("api/{version:apiVersion}/[controller]")]
     public class MeatController : BaseController
     {
         /// <summary>
