@@ -139,23 +139,23 @@ namespace FoodOrder.Tests.Common
 				},
 				new Order
 				{
-					Id = Guid.Parse("B9C42CA1-DB50-4D20-85B8-092B0DEB3681"),
-					UserId = UserIdForDelete,
-					BeverageId = Guid.Parse("FCEC3D45-F4BE-4852-A809-5465737DD0B3"),
-					GarnishId = Guid.Parse("E6CA7680-B1FB-4221-BC55-B45955B22071"),
-					MeatId = Guid.Parse("FCEC3D45-F4BE-4852-A809-5465737DD0B3"),
-					SoupId = Guid.Parse("E6CA7680-B1FB-4221-BC55-B45955B22071"),
-					IsCompleted = true,
-					OrderTime = DateTime.Today
-				},
-				new Order
-				{
 					Id = Guid.Parse("AF635200-0205-41BF-9EB1-D4D8398A223D"),
 					UserId = UserIdForDelete,
 					BeverageId = Guid.Parse("A864C2E3-D547-49BD-BC91-8EBFA4700282"),
 					GarnishId = Guid.Parse("A864C2E3-D547-49BD-BC91-8EBFA4700282"),
 					MeatId = Guid.Parse("A864C2E3-D547-49BD-BC91-8EBFA4700282"),
 					SoupId = Guid.Parse("A864C2E3-D547-49BD-BC91-8EBFA4700282"),
+					IsCompleted = false,
+					OrderTime = DateTime.Today
+				},
+				new Order
+				{
+					Id = EntityIdForUpdate,
+					UserId = UserIdForDelete,
+					BeverageId = Guid.Parse("FCEC3D45-F4BE-4852-A809-5465737DD0B3"),
+					GarnishId = Guid.Parse("E6CA7680-B1FB-4221-BC55-B45955B22071"),
+					MeatId = Guid.Parse("FCEC3D45-F4BE-4852-A809-5465737DD0B3"),
+					SoupId = Guid.Parse("E6CA7680-B1FB-4221-BC55-B45955B22071"),
 					IsCompleted = false,
 					OrderTime = DateTime.Today
 				}

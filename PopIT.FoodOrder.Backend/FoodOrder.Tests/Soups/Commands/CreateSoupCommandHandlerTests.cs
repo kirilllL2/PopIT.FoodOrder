@@ -27,7 +27,7 @@ namespace FoodOrder.Tests.Soups.Commands
 
 			// Assert
 			Assert.NotNull(
-				await Context.Beverages.SingleOrDefaultAsync(s =>
+				await Context.Soups.SingleOrDefaultAsync(s =>
 					s.Id == soupId
 					&& s.Name == soupName
 					&& s.Price == soupPrice));
