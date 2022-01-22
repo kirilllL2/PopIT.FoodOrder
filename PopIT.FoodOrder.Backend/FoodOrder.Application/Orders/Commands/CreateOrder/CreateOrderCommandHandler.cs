@@ -9,12 +9,12 @@ using MediatR;
 
 namespace FoodOrder.Application.Orders.Commands.CreateOrder
 {
-    public class CreateOrderCommandHandle : IRequestHandler<CreateOrderCommand, Guid>
+    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Guid>
     {
         private readonly IFoodOrderDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public CreateOrderCommandHandle(IFoodOrderDbContext dbContext, IMapper mapper) =>
+        public CreateOrderCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
             (_dbContext, _mapper) = (dbContext, mapper);
         
         public async Task<Guid> Handle(CreateOrderCommand request, CancellationToken cancellationToken)

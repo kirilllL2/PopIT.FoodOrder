@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C55E63EC-761A-49C3-A56A-5520B69E0E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Domain", "FoodOrder.Domain\FoodOrder.Domain.csproj", "{F77A177A-3EAF-4638-B0CC-1FE4FC6545E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Domain", "FoodOrder.Domain\FoodOrder.Domain.csproj", "{F77A177A-3EAF-4638-B0CC-1FE4FC6545E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Application", "FoodOrder.Application\FoodOrder.Application.csproj", "{2193C6B6-6EF2-4BAE-B9CB-443546FE9AC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Application", "FoodOrder.Application\FoodOrder.Application.csproj", "{2193C6B6-6EF2-4BAE-B9CB-443546FE9AC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Persistence", "FoodOrder.Persistence\FoodOrder.Persistence.csproj", "{B3166F39-D98B-4FB8-A2D0-FF3B79A15A1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.Persistence", "FoodOrder.Persistence\FoodOrder.Persistence.csproj", "{B3166F39-D98B-4FB8-A2D0-FF3B79A15A1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.WebApi", "FoodOrder.WebApi\FoodOrder.WebApi.csproj", "{D81D7AAD-1487-4367-9FB6-C6FC12950E7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodOrder.WebApi", "FoodOrder.WebApi\FoodOrder.WebApi.csproj", "{D81D7AAD-1487-4367-9FB6-C6FC12950E7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodOrder.Tests", "FoodOrder.Tests\FoodOrder.Tests.csproj", "{6663B34F-E8C8-4912-AF26-2913B8B6BE9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{D81D7AAD-1487-4367-9FB6-C6FC12950E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81D7AAD-1487-4367-9FB6-C6FC12950E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81D7AAD-1487-4367-9FB6-C6FC12950E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6663B34F-E8C8-4912-AF26-2913B8B6BE9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6663B34F-E8C8-4912-AF26-2913B8B6BE9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6663B34F-E8C8-4912-AF26-2913B8B6BE9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6663B34F-E8C8-4912-AF26-2913B8B6BE9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{2193C6B6-6EF2-4BAE-B9CB-443546FE9AC4} = {A6B0111C-A836-4F30-BC7D-5965567C1004}
 		{B3166F39-D98B-4FB8-A2D0-FF3B79A15A1D} = {592FDB4D-4B45-4CC8-A614-A5FE1AF1FD78}
 		{D81D7AAD-1487-4367-9FB6-C6FC12950E7D} = {E1BA821E-026F-4EC7-913F-F1A26C352B47}
+		{6663B34F-E8C8-4912-AF26-2913B8B6BE9A} = {C55E63EC-761A-49C3-A56A-5520B69E0E9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24458C4B-F6F3-48AD-A0B6-597FAB128D8A}
