@@ -12,7 +12,7 @@ namespace FoodOrder.Application.Meats.Commands.DeleteMeat
     {
         private readonly IFoodOrderDbContext _dbContext;
 
-        public DeleteMeatCommandHandler(IFoodOrderDbContext dbContext, IMapper mapper) =>
+        public DeleteMeatCommandHandler(IFoodOrderDbContext dbContext) =>
             _dbContext = dbContext;
 
         public async Task<Unit> Handle(DeleteMeatCommand request, CancellationToken cancellationToken)

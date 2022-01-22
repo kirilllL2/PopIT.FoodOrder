@@ -2,6 +2,8 @@ using FoodOrder.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Events;
 using System;
 
 namespace FoodOrder.WebApi
@@ -10,6 +12,11 @@ namespace FoodOrder.WebApi
 	{
 		public static void Main(string[] args)
 		{
+			Log.Logger = new LoggerConfiguration()
+				.MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+				.WriteTo.File("FoodOrderWebAppLog-.txt", rollingInterval: RollingInterval.Day)
+				.CreateLogger();
+
 			var host = CreateHostBuilder(args).Build();
 
 			using (var scope = host.Services.CreateScope())
@@ -22,7 +29,7 @@ namespace FoodOrder.WebApi
 				}
 				catch (Exception exception)
 				{
-					// Log.Fatal(exception, "An error occurred while app initialization");
+					Log.Fatal(exception, "An error occurred while app initialization");
 				}
 			}
 
@@ -31,6 +38,7 @@ namespace FoodOrder.WebApi
 
 		public static IHostBuilder CreateHostBuilder(string[] args) =>
 			Host.CreateDefaultBuilder(args)
+				.UseSerilog()
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();
