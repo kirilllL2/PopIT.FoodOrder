@@ -1,0 +1,1207 @@
+2022-01-23 10:25:45.398 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:25:45.473 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:25:45.473 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:25:45.473 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:25:45.646 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 10:25:48.102 +04:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 10:25:48.207 +04:00 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 10:25:48.242 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 10:25:48.651 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 10:25:48.652 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 10:25:48.652 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 10:25:48.652 +04:00 [INF] Hosting environment: Development
+2022-01-23 10:25:48.652 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 10:31:33.786 +04:00 [INF] Application is shutting down...
+2022-01-23 10:32:14.071 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:32:14.125 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:32:14.125 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:32:14.125 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 10:32:14.289 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 10:32:14.772 +04:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 10:32:14.827 +04:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 10:32:14.853 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 10:32:15.198 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 10:32:15.198 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 10:32:15.198 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 10:32:15.198 +04:00 [INF] Hosting environment: Development
+2022-01-23 10:32:15.198 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 10:33:33.352 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 10:33:33.460 +04:00 [INF] CORS policy execution successful.
+2022-01-23 10:33:33.526 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 10:33:33.533 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 10:33:33.540 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 191.1615ms
+2022-01-23 10:34:02.150 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 10:34:02.153 +04:00 [INF] CORS policy execution successful.
+2022-01-23 10:34:02.156 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 10:34:02.156 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 10:34:02.157 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 7.0548ms
+2022-01-23 11:39:34.742 +04:00 [INF] Application is shutting down...
+2022-01-23 11:45:09.565 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:45:09.663 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:45:09.664 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:45:09.664 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:45:09.860 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 11:45:11.650 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 11:45:11.737 +04:00 [INF] Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 11:45:11.767 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 11:45:12.233 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 11:45:12.234 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 11:45:12.234 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 11:45:12.234 +04:00 [INF] Hosting environment: Development
+2022-01-23 11:45:12.234 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 11:46:03.424 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 11:46:03.524 +04:00 [INF] CORS policy execution successful.
+2022-01-23 11:46:03.577 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 11:46:03.586 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 11:46:03.593 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 173.1102ms
+2022-01-23 11:46:41.019 +04:00 [INF] Application is shutting down...
+2022-01-23 11:46:56.220 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:46:56.299 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:46:56.300 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:46:56.300 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 11:46:56.526 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 11:46:57.082 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 11:46:57.171 +04:00 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 11:46:57.209 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 11:46:57.567 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 11:46:57.567 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 11:46:57.567 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 11:46:57.567 +04:00 [INF] Hosting environment: Development
+2022-01-23 11:46:57.567 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 11:48:29.388 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 11:48:29.514 +04:00 [INF] CORS policy execution successful.
+2022-01-23 11:48:29.583 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:48:29.624 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 11:48:29.728 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 11:48:30.095 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 11:48:30.702 +04:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 11:48:30.760 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 11:48:30.847 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 1213.4523ms
+2022-01-23 11:48:30.849 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:48:30.863 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 1483.1145ms
+2022-01-23 11:58:27.885 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 11:58:27.887 +04:00 [INF] CORS policy execution successful.
+2022-01-23 11:58:27.888 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:58:27.889 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 11:58:27.889 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 11:58:27.963 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 11:58:28.121 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 11:58:28.123 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 11:58:28.124 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 234.7991ms
+2022-01-23 11:58:28.124 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:58:28.125 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 240.6656ms
+2022-01-23 11:59:27.133 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 11:59:27.135 +04:00 [INF] CORS policy execution successful.
+2022-01-23 11:59:27.137 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:59:27.137 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 11:59:27.139 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 11:59:27.140 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 11:59:27.142 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 11:59:27.143 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 11:59:27.143 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 5.8584ms
+2022-01-23 11:59:27.143 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 11:59:27.144 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 10.8838ms
+2022-01-23 12:00:13.409 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:00:13.409 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:00:13.411 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 2.6061ms
+2022-01-23 12:00:13.423 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:00:13.423 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:00:13.916 +04:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: sdf
+2022-01-23 12:00:13.919 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:00:13.919 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:00:13.919 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 12:00:13.920 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:00:13.922 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:00:13.922 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:00:13.923 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 3.2923ms
+2022-01-23 12:00:13.923 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:00:13.923 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 499.5259ms
+2022-01-23 12:00:21.703 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:00:21.703 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:00:21.704 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 0.5779ms
+2022-01-23 12:00:21.711 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:00:21.711 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:00:21.711 +04:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token: sdf
+2022-01-23 12:00:21.711 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:00:21.711 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:00:21.712 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 12:00:21.712 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:00:21.713 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:00:21.713 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:00:21.714 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 2.1405ms
+2022-01-23 12:00:21.714 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:00:21.714 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 3.3466ms
+2022-01-23 12:24:34.997 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:24:35.000 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:24:35.000 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 2.9838ms
+2022-01-23 12:24:35.007 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:24:35.007 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:24:35.097 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:24:35.116 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:24:35.116 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:24:35.116 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:24:35.117 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 12:24:35.117 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:24:35.242 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:24:35.244 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:24:35.244 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 127.7287ms
+2022-01-23 12:24:35.245 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:24:35.245 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 238.2714ms
+2022-01-23 12:24:51.109 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:24:51.109 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:24:51.109 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 0.4045ms
+2022-01-23 12:24:51.115 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:24:51.115 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:24:51.116 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:24:51.116 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:24:51.116 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:24:51.117 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:24:51.117 +04:00 [INF] FoodOrder Request: GetSoupListQuery "00000000-0000-0000-0000-000000000000" {"$type":"GetSoupListQuery"}
+2022-01-23 12:24:51.117 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:24:51.118 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:24:51.118 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:24:51.118 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 1.8646ms
+2022-01-23 12:24:51.119 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:24:51.119 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 3.5981ms
+2022-01-23 12:25:29.123 +04:00 [INF] Application is shutting down...
+2022-01-23 12:25:42.526 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:25:42.582 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:25:42.582 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:25:42.582 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:25:42.739 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:25:43.205 +04:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 12:25:43.284 +04:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 12:25:43.310 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 12:25:43.634 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 12:25:43.634 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 12:25:43.635 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 12:25:43.635 +04:00 [INF] Hosting environment: Development
+2022-01-23 12:25:43.635 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 12:25:51.777 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:25:51.896 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:25:51.907 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 135.2276ms
+2022-01-23 12:25:51.926 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:25:51.948 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:25:52.575 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:25:52.601 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:25:52.619 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:25:52.634 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:25:52.642 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 716.4911ms
+2022-01-23 12:25:55.937 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:25:55.938 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:25:55.941 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:25:55.942 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:25:55.942 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:25:55.942 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:25:55.943 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 6.0883ms
+2022-01-23 12:26:02.980 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:26:02.980 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:26:02.980 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 0.4828ms
+2022-01-23 12:26:02.994 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:26:02.994 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:26:02.995 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:26:02.996 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:26:02.997 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:26:02.997 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:26:02.998 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 3.7733ms
+2022-01-23 12:27:54.438 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:27:54.439 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:27:54.440 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 2.1419ms
+2022-01-23 12:27:54.448 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:27:54.449 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:27:54.450 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:27:54.450 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:27:54.450 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:27:54.451 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:27:54.451 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 3.2268ms
+2022-01-23 12:31:47.359 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:31:47.359 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:31:47.359 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 0.9215ms
+2022-01-23 12:31:47.366 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:31:47.366 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:31:47.367 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:31:47.367 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:31:47.367 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:31:47.367 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:31:47.368 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 2.0270ms
+2022-01-23 12:32:43.913 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/index.html - -
+2022-01-23 12:32:44.071 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/index.html - - - 200 - text/html;charset=utf-8 157.7111ms
+2022-01-23 12:32:45.199 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - -
+2022-01-23 12:32:45.448 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 249.3392ms
+2022-01-23 12:32:59.019 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 12:32:59.021 +04:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidIssuerException: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateIssuer(String issuer, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateIssuer(String issuer, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2022-01-23 12:32:59.022 +04:00 [INF] Bearer was not authenticated. Failure message: IDX10205: Issuer validation failed. Issuer: 'System.String'. Did not match: validationParameters.ValidIssuer: 'System.String' or validationParameters.ValidIssuers: 'System.String'.
+2022-01-23 12:32:59.023 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:32:59.023 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:32:59.024 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 4.7814ms
+2022-01-23 12:35:39.849 +04:00 [INF] Application is shutting down...
+2022-01-23 12:35:48.469 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:35:48.528 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:35:48.529 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:35:48.529 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:35:48.706 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:35:49.252 +04:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 12:35:49.325 +04:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 12:35:49.353 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 12:35:49.739 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 12:35:49.739 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 12:35:49.740 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 12:35:49.740 +04:00 [INF] Hosting environment: Development
+2022-01-23 12:35:49.740 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 12:35:56.854 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 12:35:57.618 +04:00 [INF] Successfully validated the token.
+2022-01-23 12:35:57.635 +04:00 [INF] Authorization was successful.
+2022-01-23 12:35:57.637 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:35:57.682 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:35:57.736 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 12:35:58.061 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:35:58.685 +04:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:35:58.734 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:35:58.802 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 1111.2488ms
+2022-01-23 12:35:58.805 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:35:58.819 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 1969.2073ms
+2022-01-23 12:36:05.024 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:05.029 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:05.032 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 8.8422ms
+2022-01-23 12:36:05.044 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:05.046 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:05.047 +04:00 [INF] Successfully validated the token.
+2022-01-23 12:36:05.048 +04:00 [INF] Authorization was successful.
+2022-01-23 12:36:05.048 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:05.048 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:36:05.049 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 12:36:05.101 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:36:05.108 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:36:05.109 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:36:05.111 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 62.4796ms
+2022-01-23 12:36:05.111 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:05.111 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 66.7808ms
+2022-01-23 12:36:15.910 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:15.910 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:15.911 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 0.5337ms
+2022-01-23 12:36:15.917 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:15.918 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:15.920 +04:00 [INF] Successfully validated the token.
+2022-01-23 12:36:15.921 +04:00 [INF] Authorization was successful.
+2022-01-23 12:36:15.921 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:15.921 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:36:15.923 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 12:36:15.924 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:36:15.927 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:36:15.927 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:36:15.928 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 6.1294ms
+2022-01-23 12:36:15.928 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:15.928 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 10.7095ms
+2022-01-23 12:36:55.581 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:55.582 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:55.582 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 1.1286ms
+2022-01-23 12:36:55.588 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:36:55.589 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:36:55.590 +04:00 [INF] Successfully validated the token.
+2022-01-23 12:36:55.590 +04:00 [INF] Authorization was successful.
+2022-01-23 12:36:55.590 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:55.591 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:36:55.591 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 12:36:55.592 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:36:55.593 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:36:55.593 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:36:55.594 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 2.9411ms
+2022-01-23 12:36:55.594 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:36:55.595 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 6.2688ms
+2022-01-23 12:37:03.822 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:37:03.823 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:37:03.823 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 12:37:03.830 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 12:37:03.830 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 401 0 - 8.0931ms
+2022-01-23 12:43:51.410 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/soup - -
+2022-01-23 12:43:51.411 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:43:51.412 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/soup - - - 204 - - 1.6672ms
+2022-01-23 12:43:51.418 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/soup - -
+2022-01-23 12:43:51.419 +04:00 [INF] CORS policy execution successful.
+2022-01-23 12:43:51.420 +04:00 [INF] Successfully validated the token.
+2022-01-23 12:43:51.420 +04:00 [INF] Authorization was successful.
+2022-01-23 12:43:51.420 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:43:51.421 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 12:43:51.422 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 12:43:51.423 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:43:51.574 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 12:43:51.575 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 12:43:51.576 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 154.4574ms
+2022-01-23 12:43:51.577 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 12:43:51.577 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/soup - - - 200 - application/json;+charset=utf-8 159.2066ms
+2022-01-23 12:53:04.518 +04:00 [INF] Application is shutting down...
+2022-01-23 12:53:21.865 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:53:21.952 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:53:21.953 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:53:21.954 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 12:53:22.137 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 12:53:22.672 +04:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 12:53:22.737 +04:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 12:53:22.767 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 12:53:23.117 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 12:53:23.117 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 12:53:23.117 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 12:53:23.117 +04:00 [INF] Hosting environment: Development
+2022-01-23 12:53:23.117 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 13:02:58.841 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - -
+2022-01-23 13:02:59.159 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 324.4721ms
+2022-01-23 13:02:59.436 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/favicon.ico - -
+2022-01-23 13:02:59.543 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/favicon.ico - - - 404 0 - 107.1560ms
+2022-01-23 13:03:16.260 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7001/swagger/v1/swagger.json - -
+2022-01-23 13:03:16.281 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 21.0532ms
+2022-01-23 13:04:53.024 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:04:53.038 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:04:53.045 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:04:53.053 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:04:53.054 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 30.3758ms
+2022-01-23 13:04:58.205 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:04:58.208 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:04:58.210 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:04:58.210 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:04:58.211 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 5.8712ms
+2022-01-23 13:05:28.246 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:05:28.246 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:05:28.248 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:05:28.249 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:05:28.249 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 3.2071ms
+2022-01-23 13:05:35.993 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:05:35.993 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:05:35.994 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:05:35.994 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:05:35.994 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 0.8579ms
+2022-01-23 13:07:06.702 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 13:07:06.702 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:07:06.705 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 2.9044ms
+2022-01-23 13:07:06.715 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:07:06.716 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:07:07.382 +04:00 [INF] Successfully validated the token.
+2022-01-23 13:07:07.387 +04:00 [INF] Authorization was successful.
+2022-01-23 13:07:07.388 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:07:07.426 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 13:07:07.478 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 13:07:07.833 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 13:07:09.660 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 13:07:09.714 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 13:07:09.774 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 2339.7835ms
+2022-01-23 13:07:09.776 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:07:09.785 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 3069.5610ms
+2022-01-23 13:23:57.733 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 13:23:57.735 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:23:57.735 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 1.8754ms
+2022-01-23 13:23:57.740 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:23:57.741 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:23:57.742 +04:00 [INF] Successfully validated the token.
+2022-01-23 13:23:57.742 +04:00 [INF] Authorization was successful.
+2022-01-23 13:23:57.742 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:23:57.743 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 13:23:57.743 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 13:23:57.789 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 13:23:57.883 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 13:23:57.884 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 13:23:57.885 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 142.1441ms
+2022-01-23 13:23:57.885 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:23:57.885 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 145.0184ms
+2022-01-23 13:27:29.292 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:27:29.293 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:27:29.293 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:27:29.294 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:27:29.294 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 1.6880ms
+2022-01-23 13:27:36.139 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:27:36.140 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:27:36.140 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:27:36.140 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:27:36.141 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 1.5907ms
+2022-01-23 13:27:46.380 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:27:46.381 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:27:46.381 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:27:46.381 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:27:46.381 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 1.3608ms
+2022-01-23 13:28:45.621 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:28:45.622 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:28:45.622 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:28:45.622 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:28:45.623 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 1.4978ms
+2022-01-23 13:28:59.339 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:28:59.340 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:28:59.340 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:28:59.340 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:28:59.341 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 1.3576ms
+2022-01-23 13:44:34.650 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:44:34.651 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:44:34.652 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 13:44:34.652 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 13:44:34.652 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 2.2409ms
+2022-01-23 13:50:39.757 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 13:50:39.758 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:50:39.759 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 1.5659ms
+2022-01-23 13:50:39.766 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 13:50:39.766 +04:00 [INF] CORS policy execution successful.
+2022-01-23 13:50:39.767 +04:00 [INF] Successfully validated the token.
+2022-01-23 13:50:39.767 +04:00 [INF] Authorization was successful.
+2022-01-23 13:50:39.767 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:50:39.768 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 13:50:39.770 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 13:50:39.772 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 13:50:39.875 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 13:50:39.876 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 13:50:39.876 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 108.177ms
+2022-01-23 13:50:39.877 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 13:50:39.877 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 111.4559ms
+2022-01-23 13:53:21.158 +04:00 [INF] Application is shutting down...
+2022-01-23 13:53:57.783 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 13:53:57.841 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 13:53:57.842 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 13:53:57.842 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 13:53:58.065 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 13:53:58.588 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 13:53:58.673 +04:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 13:53:58.705 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 13:53:59.153 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 13:53:59.154 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 13:53:59.154 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 13:53:59.154 +04:00 [INF] Hosting environment: Development
+2022-01-23 13:53:59.154 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 14:08:47.579 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 14:08:47.680 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:47.691 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 115.5523ms
+2022-01-23 14:08:47.705 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 14:08:47.720 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:48.352 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:08:48.362 +04:00 [INF] Authorization was successful.
+2022-01-23 14:08:48.363 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 14:08:48.398 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 14:08:48.447 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 14:08:48.719 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:08:49.249 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 14:08:49.299 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 14:08:49.359 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 952.6988ms
+2022-01-23 14:08:49.361 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 14:08:49.370 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 1664.5388ms
+2022-01-23 14:08:49.611 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - -
+2022-01-23 14:08:49.612 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.612 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - - - 204 - - 1.3822ms
+2022-01-23 14:08:49.618 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Beverage - -
+2022-01-23 14:08:49.619 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.620 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:08:49.620 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 14:08:49.624 +04:00 [INF] Route matched with {action = "GetAllBeverages", controller = "Beverage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm]] GetAllBeverages() on controller FoodOrder.WebApi.Controllers.BeverageController (FoodOrder.WebApi).
+2022-01-23 14:08:49.627 +04:00 [INF] FoodOrder Request: GetBeverageListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetBeverageListQuery"}
+2022-01-23 14:08:49.681 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:08:49.692 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+2022-01-23 14:08:49.694 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm'.
+2022-01-23 14:08:49.698 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi) in 73.4075ms
+2022-01-23 14:08:49.698 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 14:08:49.698 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Beverage - - - 200 - application/json;+charset=utf-8 79.7093ms
+2022-01-23 14:08:49.729 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - -
+2022-01-23 14:08:49.729 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.729 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - - - 204 - - 0.4914ms
+2022-01-23 14:08:49.736 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Garnish - -
+2022-01-23 14:08:49.736 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.739 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:08:49.739 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 14:08:49.742 +04:00 [INF] Route matched with {action = "GetAllGarnishes", controller = "Garnish"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm]] GetAllGarnishes() on controller FoodOrder.WebApi.Controllers.GarnishController (FoodOrder.WebApi).
+2022-01-23 14:08:49.745 +04:00 [INF] FoodOrder Request: GetGarnishListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetGarnishListQuery"}
+2022-01-23 14:08:49.748 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:08:49.755 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+2022-01-23 14:08:49.757 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm'.
+2022-01-23 14:08:49.760 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi) in 17.7654ms
+2022-01-23 14:08:49.760 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 14:08:49.760 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Garnish - - - 200 - application/json;+charset=utf-8 24.4916ms
+2022-01-23 14:08:49.792 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - -
+2022-01-23 14:08:49.792 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.792 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - - - 204 - - 0.4698ms
+2022-01-23 14:08:49.799 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Meat - -
+2022-01-23 14:08:49.799 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.800 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:08:49.800 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 14:08:49.804 +04:00 [INF] Route matched with {action = "GetAllMeats", controller = "Meat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm]] GetAllMeats() on controller FoodOrder.WebApi.Controllers.MeatController (FoodOrder.WebApi).
+2022-01-23 14:08:49.806 +04:00 [INF] FoodOrder Request: GetMeatListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetMeatListQuery"}
+2022-01-23 14:08:49.809 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:08:49.815 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+2022-01-23 14:08:49.816 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm'.
+2022-01-23 14:08:49.819 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi) in 15.3645ms
+2022-01-23 14:08:49.819 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 14:08:49.819 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Meat - - - 200 - application/json;+charset=utf-8 20.4999ms
+2022-01-23 14:08:49.892 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Order - -
+2022-01-23 14:08:49.892 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.893 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Order - - - 204 - - 0.9217ms
+2022-01-23 14:08:49.904 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7001/api/1/Order application/json 200
+2022-01-23 14:08:49.904 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:08:49.905 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:08:49.905 +04:00 [INF] Authorization was successful.
+2022-01-23 14:08:49.905 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 14:08:49.920 +04:00 [INF] Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] CreateOrder(FoodOrder.WebApi.Models.CreateOrderDto) on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 14:08:50.005 +04:00 [INF] FoodOrder Request: CreateOrderCommand "c2400996-a683-4595-9b18-248ae314ab90" {"UserId":"c2400996-a683-4595-9b18-248ae314ab90","BeverageId":"85e5076e-3c14-4e80-8941-1e0bff9db434","GarnishId":"a060b374-ab2e-42be-923f-4b7d869b6938","MeatId":"9659b1f6-b1c9-4f48-a501-46aab1623111","SoupId":"ebb4fbe5-417a-4ae7-b43e-27bbe9d0bd3d","$type":"CreateOrderCommand"}
+2022-01-23 14:08:50.009 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:08:50.165 +04:00 [INF] Executed DbCommand (29ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2022-01-23 14:08:50.257 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+WHERE [g].[Id] = @__get_Item_0
+2022-01-23 14:08:50.277 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+WHERE [m].[Id] = @__get_Item_0
+2022-01-23 14:08:50.296 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+WHERE [s].[Id] = @__get_Item_0
+2022-01-23 14:08:50.566 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BeverageId], [GarnishId], [IsCompleted], [MeatId], [OrderTime], [SoupId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2022-01-23 14:08:50.603 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-01-23 14:08:50.605 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi) in 684.5549ms
+2022-01-23 14:08:50.605 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 14:08:50.605 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7001/api/1/Order application/json 200 - 200 - application/json;+charset=utf-8 701.1116ms
+2022-01-23 14:12:10.328 +04:00 [INF] Application is shutting down...
+2022-01-23 14:15:43.060 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 14:15:43.124 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 14:15:43.124 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 14:15:43.125 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 14:15:43.345 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:43.820 +04:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 14:15:43.877 +04:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 14:15:43.908 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 14:15:44.299 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 14:15:44.299 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 14:15:44.299 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 14:15:44.299 +04:00 [INF] Hosting environment: Development
+2022-01-23 14:15:44.299 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 14:15:56.855 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 14:15:56.947 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:56.959 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 107.8221ms
+2022-01-23 14:15:56.974 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 14:15:56.991 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:57.652 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:15:57.664 +04:00 [INF] Authorization was successful.
+2022-01-23 14:15:57.665 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 14:15:57.709 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 14:15:57.811 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 14:15:58.203 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:58.783 +04:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 14:15:58.840 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 14:15:58.914 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 1192.4165ms
+2022-01-23 14:15:58.917 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 14:15:58.932 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 1958.1319ms
+2022-01-23 14:15:59.172 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - -
+2022-01-23 14:15:59.173 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.174 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - - - 204 - - 1.4705ms
+2022-01-23 14:15:59.179 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Beverage - -
+2022-01-23 14:15:59.180 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.181 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:15:59.181 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 14:15:59.185 +04:00 [INF] Route matched with {action = "GetAllBeverages", controller = "Beverage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm]] GetAllBeverages() on controller FoodOrder.WebApi.Controllers.BeverageController (FoodOrder.WebApi).
+2022-01-23 14:15:59.188 +04:00 [INF] FoodOrder Request: GetBeverageListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetBeverageListQuery"}
+2022-01-23 14:15:59.234 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:59.240 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+2022-01-23 14:15:59.242 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm'.
+2022-01-23 14:15:59.245 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi) in 59.9257ms
+2022-01-23 14:15:59.245 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 14:15:59.246 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Beverage - - - 200 - application/json;+charset=utf-8 66.4426ms
+2022-01-23 14:15:59.276 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - -
+2022-01-23 14:15:59.276 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.276 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - - - 204 - - 0.4457ms
+2022-01-23 14:15:59.281 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Garnish - -
+2022-01-23 14:15:59.281 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.283 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:15:59.283 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 14:15:59.287 +04:00 [INF] Route matched with {action = "GetAllGarnishes", controller = "Garnish"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm]] GetAllGarnishes() on controller FoodOrder.WebApi.Controllers.GarnishController (FoodOrder.WebApi).
+2022-01-23 14:15:59.290 +04:00 [INF] FoodOrder Request: GetGarnishListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetGarnishListQuery"}
+2022-01-23 14:15:59.292 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:59.297 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+2022-01-23 14:15:59.299 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm'.
+2022-01-23 14:15:59.302 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi) in 14.7097ms
+2022-01-23 14:15:59.302 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 14:15:59.302 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Garnish - - - 200 - application/json;+charset=utf-8 21.5467ms
+2022-01-23 14:15:59.343 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - -
+2022-01-23 14:15:59.344 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.344 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - - - 204 - - 0.4311ms
+2022-01-23 14:15:59.349 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Meat - -
+2022-01-23 14:15:59.350 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.350 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:15:59.350 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 14:15:59.354 +04:00 [INF] Route matched with {action = "GetAllMeats", controller = "Meat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm]] GetAllMeats() on controller FoodOrder.WebApi.Controllers.MeatController (FoodOrder.WebApi).
+2022-01-23 14:15:59.357 +04:00 [INF] FoodOrder Request: GetMeatListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetMeatListQuery"}
+2022-01-23 14:15:59.359 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:59.364 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+2022-01-23 14:15:59.366 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm'.
+2022-01-23 14:15:59.370 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi) in 15.3864ms
+2022-01-23 14:15:59.370 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 14:15:59.370 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Meat - - - 200 - application/json;+charset=utf-8 20.8643ms
+2022-01-23 14:15:59.470 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Order - -
+2022-01-23 14:15:59.470 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.471 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Order - - - 204 - - 0.9433ms
+2022-01-23 14:15:59.480 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7001/api/1/Order application/json 200
+2022-01-23 14:15:59.481 +04:00 [INF] CORS policy execution successful.
+2022-01-23 14:15:59.481 +04:00 [INF] Successfully validated the token.
+2022-01-23 14:15:59.482 +04:00 [INF] Authorization was successful.
+2022-01-23 14:15:59.482 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 14:15:59.496 +04:00 [INF] Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] CreateOrder(FoodOrder.WebApi.Models.CreateOrderDto) on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 14:15:59.578 +04:00 [INF] FoodOrder Request: CreateOrderCommand "c2400996-a683-4595-9b18-248ae314ab90" {"UserId":"c2400996-a683-4595-9b18-248ae314ab90","BeverageId":"85e5076e-3c14-4e80-8941-1e0bff9db434","GarnishId":"a060b374-ab2e-42be-923f-4b7d869b6938","MeatId":"9659b1f6-b1c9-4f48-a501-46aab1623111","SoupId":"ebb4fbe5-417a-4ae7-b43e-27bbe9d0bd3d","$type":"CreateOrderCommand"}
+2022-01-23 14:15:59.583 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 14:15:59.766 +04:00 [INF] Executed DbCommand (33ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2022-01-23 14:15:59.868 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+WHERE [g].[Id] = @__get_Item_0
+2022-01-23 14:15:59.900 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+WHERE [m].[Id] = @__get_Item_0
+2022-01-23 14:15:59.927 +04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+WHERE [s].[Id] = @__get_Item_0
+2022-01-23 14:16:00.207 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BeverageId], [GarnishId], [IsCompleted], [MeatId], [OrderTime], [SoupId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2022-01-23 14:16:00.243 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-01-23 14:16:00.244 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi) in 748.0152ms
+2022-01-23 14:16:00.244 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 14:16:00.245 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7001/api/1/Order application/json 200 - 200 - application/json;+charset=utf-8 764.1891ms
+2022-01-23 14:16:31.095 +04:00 [INF] Application is shutting down...
+2022-01-23 15:31:13.299 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Beverage'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 15:31:13.357 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Garnish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 15:31:13.358 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Meat'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 15:31:13.358 +04:00 [WRN] No type was specified for the decimal property 'Price' on entity type 'Soup'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType()', specify precision and scale using 'HasPrecision()' or configure a value converter using 'HasConversion()'.
+2022-01-23 15:31:13.550 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:31:15.423 +04:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2022-01-23 15:31:15.515 +04:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2022-01-23 15:31:15.544 +04:00 [INF] User profile is available. Using 'C:\Users\ffgh0\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-23 15:31:15.927 +04:00 [INF] Now listening on: https://localhost:7001
+2022-01-23 15:31:15.927 +04:00 [INF] Now listening on: http://localhost:7000
+2022-01-23 15:31:15.928 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-23 15:31:15.928 +04:00 [INF] Hosting environment: Development
+2022-01-23 15:31:15.928 +04:00 [INF] Content root path: C:\Users\ffgh0\OneDrive\Рабочий стол\C#\Web\PopIT.FoodOrder\PopIT.FoodOrder.Backend\FoodOrder.WebApi
+2022-01-23 15:32:29.136 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 15:32:29.226 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:32:29.238 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 105.7965ms
+2022-01-23 15:32:29.253 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:32:29.273 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:32:29.927 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:32:29.939 +04:00 [INF] Authorization was successful.
+2022-01-23 15:32:29.940 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:32:29.979 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 15:32:30.039 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 15:32:30.334 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:32:30.874 +04:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 15:32:30.923 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 15:32:30.981 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 994.4191ms
+2022-01-23 15:32:30.983 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:32:30.992 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 1738.8720ms
+2022-01-23 15:32:54.772 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:32:54.776 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:32:54.779 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2022-01-23 15:32:54.797 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2022-01-23 15:32:54.798 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 401 0 - 26.1411ms
+2022-01-23 15:34:06.695 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 15:34:06.696 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:34:06.696 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 1.1741ms
+2022-01-23 15:34:06.706 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:34:06.706 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:34:06.709 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:34:06.710 +04:00 [INF] Authorization was successful.
+2022-01-23 15:34:06.710 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:34:06.711 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 15:34:06.712 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 15:34:06.762 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:34:06.771 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 15:34:06.772 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 15:34:06.773 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 61.5217ms
+2022-01-23 15:34:06.773 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:34:06.774 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 67.7719ms
+2022-01-23 15:41:07.169 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 15:41:07.169 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:41:07.170 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 0.8860ms
+2022-01-23 15:41:07.177 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:41:07.177 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:41:07.178 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:41:07.178 +04:00 [INF] Authorization was successful.
+2022-01-23 15:41:07.178 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:41:07.178 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 15:41:07.180 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 15:41:07.181 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:41:07.274 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 15:41:07.274 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 15:41:07.274 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 96.2803ms
+2022-01-23 15:41:07.275 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:41:07.275 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 98.1549ms
+2022-01-23 15:41:19.617 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 15:41:19.618 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:41:19.619 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 1.2503ms
+2022-01-23 15:41:19.641 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:41:19.641 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:41:19.642 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:41:19.642 +04:00 [INF] Authorization was successful.
+2022-01-23 15:41:19.642 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:41:19.642 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 15:41:19.642 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 15:41:19.643 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:41:19.647 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 15:41:19.647 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 15:41:19.648 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 5.255ms
+2022-01-23 15:41:19.648 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:41:19.648 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 7.0137ms
+2022-01-23 15:42:14.965 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/index.html - -
+2022-01-23 15:42:15.056 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/index.html - - - 200 - text/html;charset=utf-8 90.8807ms
+2022-01-23 15:42:15.853 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - -
+2022-01-23 15:42:16.072 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 218.8067ms
+2022-01-23 15:42:33.952 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Order - -
+2022-01-23 15:42:33.953 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:42:33.953 +04:00 [INF] Authorization was successful.
+2022-01-23 15:42:33.953 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi)'
+2022-01-23 15:42:33.960 +04:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Orders.Queries.GetOrderList.OrderListVm]] GetAllOrders() on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 15:42:33.964 +04:00 [INF] FoodOrder Request: GetOrderListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetOrderListQuery"}
+2022-01-23 15:42:33.968 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:42:33.984 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[IsCompleted]
+FROM [Orders] AS [o]
+2022-01-23 15:42:33.987 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Orders.Queries.GetOrderList.OrderListVm'.
+2022-01-23 15:42:33.993 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi) in 31.9434ms
+2022-01-23 15:42:33.993 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi)'
+2022-01-23 15:42:33.993 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Order - - - 200 - application/json;+charset=utf-8 41.3191ms
+2022-01-23 15:43:35.342 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7001/api/1/Meat application/json 39
+2022-01-23 15:43:35.342 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:43:35.343 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:43:35.343 +04:00 [INF] Authorization was successful.
+2022-01-23 15:43:35.343 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.MeatController.CreateMeat (FoodOrder.WebApi)'
+2022-01-23 15:43:35.360 +04:00 [INF] Route matched with {action = "CreateMeat", controller = "Meat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] CreateMeat(FoodOrder.WebApi.Models.CreateMeatDto) on controller FoodOrder.WebApi.Controllers.MeatController (FoodOrder.WebApi).
+2022-01-23 15:43:35.506 +04:00 [INF] FoodOrder Request: CreateMeatCommand "c2400996-a683-4595-9b18-248ae314ab90" {"Name":"Kirill","Price":9999,"$type":"CreateMeatCommand"}
+2022-01-23 15:43:35.520 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:43:35.880 +04:00 [INF] Executed DbCommand (38ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (Precision = 18) (Scale = 2) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Meats] ([Id], [Name], [Price])
+VALUES (@p0, @p1, @p2);
+2022-01-23 15:43:35.925 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-01-23 15:43:35.926 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.MeatController.CreateMeat (FoodOrder.WebApi) in 566.6042ms
+2022-01-23 15:43:35.926 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.MeatController.CreateMeat (FoodOrder.WebApi)'
+2022-01-23 15:43:35.927 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7001/api/1/Meat application/json 39 - 200 - application/json;+charset=utf-8 584.6532ms
+2022-01-23 15:44:29.083 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - -
+2022-01-23 15:44:29.084 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.084 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Soup - - - 204 - - 1.0725ms
+2022-01-23 15:44:29.093 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Soup - -
+2022-01-23 15:44:29.094 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.095 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:29.096 +04:00 [INF] Authorization was successful.
+2022-01-23 15:44:29.096 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:44:29.097 +04:00 [INF] Route matched with {action = "GetAllSoup", controller = "Soup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm]] GetAllSoup() on controller FoodOrder.WebApi.Controllers.SoupController (FoodOrder.WebApi).
+2022-01-23 15:44:29.097 +04:00 [INF] FoodOrder Request: GetSoupListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetSoupListQuery"}
+2022-01-23 15:44:29.098 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:29.100 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+2022-01-23 15:44:29.100 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Soups.Queries.GetSoupList.SoupListVm'.
+2022-01-23 15:44:29.101 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi) in 3.8582ms
+2022-01-23 15:44:29.101 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.SoupController.GetAllSoup (FoodOrder.WebApi)'
+2022-01-23 15:44:29.102 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Soup - - - 200 - application/json;+charset=utf-8 8.4688ms
+2022-01-23 15:44:29.374 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - -
+2022-01-23 15:44:29.374 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.375 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Beverage - - - 204 - - 0.9399ms
+2022-01-23 15:44:29.382 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Beverage - -
+2022-01-23 15:44:29.382 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.383 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:29.384 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 15:44:29.388 +04:00 [INF] Route matched with {action = "GetAllBeverages", controller = "Beverage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm]] GetAllBeverages() on controller FoodOrder.WebApi.Controllers.BeverageController (FoodOrder.WebApi).
+2022-01-23 15:44:29.392 +04:00 [INF] FoodOrder Request: GetBeverageListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetBeverageListQuery"}
+2022-01-23 15:44:29.394 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:29.402 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+2022-01-23 15:44:29.404 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Beverages.Queries.GetBeverageList.BeverageListVm'.
+2022-01-23 15:44:29.407 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi) in 18.8309ms
+2022-01-23 15:44:29.407 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.BeverageController.GetAllBeverages (FoodOrder.WebApi)'
+2022-01-23 15:44:29.408 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Beverage - - - 200 - application/json;+charset=utf-8 25.8512ms
+2022-01-23 15:44:29.441 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - -
+2022-01-23 15:44:29.441 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.442 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Garnish - - - 204 - - 0.3993ms
+2022-01-23 15:44:29.449 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Garnish - -
+2022-01-23 15:44:29.449 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.450 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:29.450 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 15:44:29.454 +04:00 [INF] Route matched with {action = "GetAllGarnishes", controller = "Garnish"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm]] GetAllGarnishes() on controller FoodOrder.WebApi.Controllers.GarnishController (FoodOrder.WebApi).
+2022-01-23 15:44:29.457 +04:00 [INF] FoodOrder Request: GetGarnishListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetGarnishListQuery"}
+2022-01-23 15:44:29.459 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:29.465 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+2022-01-23 15:44:29.467 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Garnishes.Queries.GetGarnishList.GarnishListVm'.
+2022-01-23 15:44:29.470 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi) in 16.2858ms
+2022-01-23 15:44:29.470 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.GarnishController.GetAllGarnishes (FoodOrder.WebApi)'
+2022-01-23 15:44:29.470 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Garnish - - - 200 - application/json;+charset=utf-8 21.6142ms
+2022-01-23 15:44:29.502 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - -
+2022-01-23 15:44:29.502 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.503 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Meat - - - 204 - - 0.4284ms
+2022-01-23 15:44:29.510 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Meat - -
+2022-01-23 15:44:29.510 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.511 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:29.511 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 15:44:29.514 +04:00 [INF] Route matched with {action = "GetAllMeats", controller = "Meat"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm]] GetAllMeats() on controller FoodOrder.WebApi.Controllers.MeatController (FoodOrder.WebApi).
+2022-01-23 15:44:29.517 +04:00 [INF] FoodOrder Request: GetMeatListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetMeatListQuery"}
+2022-01-23 15:44:29.519 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:29.525 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+2022-01-23 15:44:29.526 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Meats.Queries.GetMeatList.MeatListVm'.
+2022-01-23 15:44:29.529 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi) in 14.5132ms
+2022-01-23 15:44:29.529 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.MeatController.GetAllMeats (FoodOrder.WebApi)'
+2022-01-23 15:44:29.529 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Meat - - - 200 - application/json;+charset=utf-8 19.3751ms
+2022-01-23 15:44:29.601 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7001/api/1/Order - -
+2022-01-23 15:44:29.602 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.602 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7001/api/1/Order - - - 204 - - 0.3665ms
+2022-01-23 15:44:29.613 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7001/api/1/Order application/json 200
+2022-01-23 15:44:29.613 +04:00 [INF] CORS policy execution successful.
+2022-01-23 15:44:29.614 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:29.614 +04:00 [INF] Authorization was successful.
+2022-01-23 15:44:29.614 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 15:44:29.618 +04:00 [INF] Route matched with {action = "CreateOrder", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Guid]] CreateOrder(FoodOrder.WebApi.Models.CreateOrderDto) on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 15:44:29.629 +04:00 [INF] FoodOrder Request: CreateOrderCommand "c2400996-a683-4595-9b18-248ae314ab90" {"UserId":"c2400996-a683-4595-9b18-248ae314ab90","BeverageId":"85e5076e-3c14-4e80-8941-1e0bff9db434","GarnishId":"a060b374-ab2e-42be-923f-4b7d869b6938","MeatId":"02728ca1-3b75-4678-aed3-f608e6f2a951","SoupId":"ebb4fbe5-417a-4ae7-b43e-27bbe9d0bd3d","$type":"CreateOrderCommand"}
+2022-01-23 15:44:29.633 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:29.746 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Name], [b].[Price]
+FROM [Beverages] AS [b]
+WHERE [b].[Id] = @__get_Item_0
+2022-01-23 15:44:29.770 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [g].[Id], [g].[Name], [g].[Price]
+FROM [Garnishes] AS [g]
+WHERE [g].[Id] = @__get_Item_0
+2022-01-23 15:44:29.788 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[Name], [m].[Price]
+FROM [Meats] AS [m]
+WHERE [m].[Id] = @__get_Item_0
+2022-01-23 15:44:29.795 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name], [s].[Price]
+FROM [Soups] AS [s]
+WHERE [s].[Id] = @__get_Item_0
+2022-01-23 15:44:29.899 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Boolean), @p4='?' (DbType = Guid), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Guid), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Orders] ([Id], [BeverageId], [GarnishId], [IsCompleted], [MeatId], [OrderTime], [SoupId], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2022-01-23 15:44:29.901 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Guid'.
+2022-01-23 15:44:29.901 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi) in 282.9552ms
+2022-01-23 15:44:29.901 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.CreateOrder (FoodOrder.WebApi)'
+2022-01-23 15:44:29.901 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7001/api/1/Order application/json 200 - 200 - application/json;+charset=utf-8 287.8567ms
+2022-01-23 15:44:44.632 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Order - -
+2022-01-23 15:44:44.632 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:44:44.633 +04:00 [INF] Authorization was successful.
+2022-01-23 15:44:44.633 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi)'
+2022-01-23 15:44:44.633 +04:00 [INF] Route matched with {action = "GetAllOrders", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Orders.Queries.GetOrderList.OrderListVm]] GetAllOrders() on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 15:44:44.633 +04:00 [INF] FoodOrder Request: GetOrderListQuery "c2400996-a683-4595-9b18-248ae314ab90" {"$type":"GetOrderListQuery"}
+2022-01-23 15:44:44.634 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:44:44.635 +04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [o].[Id], [o].[IsCompleted]
+FROM [Orders] AS [o]
+2022-01-23 15:44:44.635 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Orders.Queries.GetOrderList.OrderListVm'.
+2022-01-23 15:44:44.635 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi) in 2.4076ms
+2022-01-23 15:44:44.635 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetAllOrders (FoodOrder.WebApi)'
+2022-01-23 15:44:44.636 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Order - - - 200 - application/json;+charset=utf-8 3.9997ms
+2022-01-23 15:45:10.649 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7001/api/1/Order/5f5bf1d5-91c7-4c11-75f0-08d9de65b750 - -
+2022-01-23 15:45:10.649 +04:00 [INF] Successfully validated the token.
+2022-01-23 15:45:10.650 +04:00 [INF] Authorization was successful.
+2022-01-23 15:45:10.650 +04:00 [INF] Executing endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetOrderById (FoodOrder.WebApi)'
+2022-01-23 15:45:10.656 +04:00 [INF] Route matched with {action = "GetOrderById", controller = "Order"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FoodOrder.Application.Orders.Queries.GetOrderDetails.OrderDetailsVm]] GetOrderById(System.Guid) on controller FoodOrder.WebApi.Controllers.OrderController (FoodOrder.WebApi).
+2022-01-23 15:45:10.684 +04:00 [INF] FoodOrder Request: GetOrderDetailsQuery "c2400996-a683-4595-9b18-248ae314ab90" {"Id":"5f5bf1d5-91c7-4c11-75f0-08d9de65b750","UserId":"c2400996-a683-4595-9b18-248ae314ab90","$type":"GetOrderDetailsQuery"}
+2022-01-23 15:45:10.688 +04:00 [INF] Entity Framework Core 5.0.5 initialized 'FoodOrderDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: MigrationsAssembly=FoodOrder.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2022-01-23 15:45:10.785 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [o].[Id], [o].[BeverageId], [o].[GarnishId], [o].[IsCompleted], [o].[MeatId], [o].[OrderTime], [o].[SoupId], [o].[UserId], [b].[Id], [b].[Name], [b].[Price], [g].[Id], [g].[Name], [g].[Price], [m].[Id], [m].[Name], [m].[Price], [s].[Id], [s].[Name], [s].[Price]
+FROM [Orders] AS [o]
+INNER JOIN [Beverages] AS [b] ON [o].[BeverageId] = [b].[Id]
+INNER JOIN [Garnishes] AS [g] ON [o].[GarnishId] = [g].[Id]
+INNER JOIN [Meats] AS [m] ON [o].[MeatId] = [m].[Id]
+INNER JOIN [Soups] AS [s] ON [o].[SoupId] = [s].[Id]
+WHERE [o].[Id] = @__request_Id_0
+2022-01-23 15:45:10.809 +04:00 [INF] Executing OkObjectResult, writing value of type 'FoodOrder.Application.Orders.Queries.GetOrderDetails.OrderDetailsVm'.
+2022-01-23 15:45:10.826 +04:00 [INF] Executed action FoodOrder.WebApi.Controllers.OrderController.GetOrderById (FoodOrder.WebApi) in 169.8283ms
+2022-01-23 15:45:10.826 +04:00 [INF] Executed endpoint 'FoodOrder.WebApi.Controllers.OrderController.GetOrderById (FoodOrder.WebApi)'
+2022-01-23 15:45:10.826 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7001/api/1/Order/5f5bf1d5-91c7-4c11-75f0-08d9de65b750 - - - 200 - application/json;+charset=utf-8 177.8055ms
+2022-01-23 16:15:22.228 +04:00 [INF] Application is shutting down...
