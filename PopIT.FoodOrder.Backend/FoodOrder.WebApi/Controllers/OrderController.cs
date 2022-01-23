@@ -17,17 +17,17 @@ namespace FoodOrder.WebApi.Controllers
     public class OrderController : BaseController
     {
         /// <summary>
-		/// Gets the list of orders
-		/// </summary>
-		/// <remarks>
-		/// Sample request:
-		/// GET /orders
-		/// </remarks>
-		/// <returns>Returns OrdersListVm</returns>
-		/// <response code="200">Success</response>
-		/// <response code="401">If the user is unauthorized</response>
-		[HttpGet]
-    [Authorize]
+        /// Gets the list of orders
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// GET /orders
+        /// </remarks>
+        /// <returns>Returns OrdersListVm</returns>
+        /// <response code="200">Success</response>
+        /// <response code="401">If the user is unauthorized</response>
+        [HttpGet]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<OrderListVm>> GetAllOrders()
@@ -36,6 +36,7 @@ namespace FoodOrder.WebApi.Controllers
             var vm = await Mediator.Send(query);
             return Ok(vm);
         }
+
         /// <summary>
         /// Gets the order by id
         /// </summary>
@@ -46,7 +47,7 @@ namespace FoodOrder.WebApi.Controllers
         /// <param name="id">Order id (guid)</param>
         /// <returns>Returns OrderDetailsVm</returns>
         /// <response code="200">Success</response>
-		/// <response code="401">If the user is unauthorized</response>
+        /// <response code="401">If the user is unauthorized</response>
         [HttpGet("{id}", Name = "GetOrderById")]
         [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -63,24 +64,24 @@ namespace FoodOrder.WebApi.Controllers
         }
 
         /// <summary>
-		/// Creates the order
-		/// </summary>
-		/// <remarks>
-		/// Sample request:
-		/// POST /order
-		/// {
-		///     "BeverageId": "B48F5A9E-769D-45D8-9A77-346380E880FD",
-		///     "GarnishId": "AE9B8C14-3A86-435E-AA35-2EA2B3AC72E0",
-		///     "MeatId": "912C55EF-9BC8-42BA-8A06-2ABA9FC78415",
-		///     "SoupId": "0047821C-F667-42E6-9DEA-C268FC098EB4"
-		/// }
-		/// </remarks>
-		/// <param name="createOrderDto">СreateOrderDto object</param>
-		/// <returns>Returns id (guid)</returns>
-		/// <response code="200">Success</response>
-		/// <response code="401">If the user is unauthorized</response>
-		[HttpPost]
-    [Authorize]
+        /// Creates the order
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// POST /order
+        /// {
+        ///     "BeverageId": "B48F5A9E-769D-45D8-9A77-346380E880FD",
+        ///     "GarnishId": "AE9B8C14-3A86-435E-AA35-2EA2B3AC72E0",
+        ///     "MeatId": "912C55EF-9BC8-42BA-8A06-2ABA9FC78415",
+        ///     "SoupId": "0047821C-F667-42E6-9DEA-C268FC098EB4"
+        /// }
+        /// </remarks>
+        /// <param name="createOrderDto">СreateOrderDto object</param>
+        /// <returns>Returns id (guid)</returns>
+        /// <response code="200">Success</response>
+        /// <response code="401">If the user is unauthorized</response>
+        [HttpPost]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<Guid>> CreateOrder(CreateOrderDto createOrderDto)

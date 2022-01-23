@@ -58,7 +58,7 @@ namespace FoodOrder.WebApi
 			})
 				.AddJwtBearer("Bearer", options =>
 				{
-					options.Authority = "http://localhost:44397/";
+					options.Authority = "https://localhost:10001/";
 					options.Audience = "FoodOrderWebAPI";
 					options.RequireHttpsMetadata = false;
 				});
