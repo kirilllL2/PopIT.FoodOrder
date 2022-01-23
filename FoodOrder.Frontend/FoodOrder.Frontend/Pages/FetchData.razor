@@ -59,18 +59,18 @@ else
         }
         
         _soups = await new Client("https://localhost:7001", HttpClient).GetAllSoupAsync("1");
-        _beverages = await new Client("https://localhost:7001", HttpClient).GetAllBeveragesAsync("1");
-        _garnishes = await new Client("https://localhost:7001", HttpClient).GetAllGarnishesAsync("1");
-        _meats = await new Client("https://localhost:7001", HttpClient).GetAllMeatsAsync("1");
-        
-        var order = new CreateOrderDto()
-        {
-            SoupId = _soups.Soups.First().Id,
-            BeverageId = _beverages.Beverages.First().Id,
-            GarnishId = _garnishes.Garnishes.First().Id,
-            MeatId = Guid.Parse("02728ca1-3b75-4678-aed3-f608e6f2a951")
-        };
-        
-        await new Client("https://localhost:7001", HttpClient).CreateOrderAsync("1", order);
+        // _beverages = await new Client("https://localhost:7001", HttpClient).GetAllBeveragesAsync("1");
+        // _garnishes = await new Client("https://localhost:7001", HttpClient).GetAllGarnishesAsync("1");
+        // _meats = await new Client("https://localhost:7001", HttpClient).GetAllMeatsAsync("1");
+        //
+        // var order = new CreateOrderDto()
+        // {
+        //     SoupId = _soups.Soups.First().Id,
+        //     BeverageId = _beverages.Beverages.First().Id,
+        //     GarnishId = _garnishes.Garnishes.First().Id,
+        //     MeatId = Guid.Parse("02728ca1-3b75-4678-aed3-f608e6f2a951")
+        // };
+        //
+        // await new Client("https://localhost:7001", HttpClient).CreateOrderAsync("1", order);
     }
 }

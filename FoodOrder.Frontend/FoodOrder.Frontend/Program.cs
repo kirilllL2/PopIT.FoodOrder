@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace FoodOrder.Frontend
 {
@@ -17,15 +18,7 @@ namespace FoodOrder.Frontend
 
             builder.Services.AddOidcAuthentication(options =>
             {
-                // Configure your authentication provider options here.
-                // For more information, see https://aka.ms/blazor-standalone-auth
-                // builder.Configuration.Bind("Local", options.ProviderOptions);
-                options.ProviderOptions.Authority = "https://localhost:10001";
-                options.ProviderOptions.ClientId = "food-order-web-api";
-                options.ProviderOptions.DefaultScopes.Add("profile");
-                options.ProviderOptions.DefaultScopes.Add("openid");
-                options.ProviderOptions.DefaultScopes.Add("FoodOrderWebAPI");
-                options.ProviderOptions.ResponseType = "code";
+                builder.Configuration.Bind("Local", options.ProviderOptions);
             });
 
             await builder.Build().RunAsync();
