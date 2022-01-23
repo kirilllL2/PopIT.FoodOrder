@@ -35,27 +35,27 @@ namespace FoodOrder.Identity
                 new Client
                 {
                     ClientId = "food-order-web-api",
-                    ClientName = "FoodOrder Web",
+                    ClientName = "FoodOrderWebAPI",
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
                     RedirectUris =
                     {
-                        "http://.../singin-oidc"
+                        "https://localhost:5001/authentication/login-callback"
                     },
                     AllowedCorsOrigins =
                     {
-                        "http://..."
+                        "https://localhost:5001"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://.../singout-oidc"
+                        "https://localhost:5001/authentication/logout-callback"
                     },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "FoodOrderAPI"
+                        "FoodOrderWebAPI"
                     },
                     AllowAccessTokensViaBrowser = true
                 }

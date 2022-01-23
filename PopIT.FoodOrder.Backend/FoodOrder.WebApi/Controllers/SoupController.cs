@@ -27,6 +27,7 @@ namespace FoodOrder.WebApi.Controllers
 		/// <returns>Returns SoupListVm</returns>
 		/// <response code="200">Success</response>
 		[HttpGet]
+		[Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<SoupListVm>> GetAllSoup()
         {
