@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Blazored.Toast;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FoodOrder.Frontend.Services
 {
@@ -6,6 +7,8 @@ namespace FoodOrder.Frontend.Services
     {
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
+            services.AddBlazoredToast();
+
             return services;
         }
     }

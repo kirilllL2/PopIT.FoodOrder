@@ -1,23 +1,29 @@
-﻿<CascadingAuthenticationState>
-    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-        <Found Context="routeData">
-            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-                <NotAuthorized>
-                    @if (!context.User.Identity.IsAuthenticated)
-                    {
-                        <RedirectToLogin />
-                    }
-                    else
-                    {
-                        <p>You are not authorized to access this resource.</p>
-                    }
-                </NotAuthorized>
-            </AuthorizeRouteView>
-        </Found>
-        <NotFound>
-            <LayoutView Layout="@typeof(MainLayout)">
-                <p>Sorry, there's nothing at this address.</p>
-            </LayoutView>
-        </NotFound>
-    </Router>
-</CascadingAuthenticationState>
+﻿<Error>
+	<CascadingAuthenticationState>
+		<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+			<Found Context="routeData">
+				<AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+					<NotAuthorized>
+						@if (!context.User.Identity.IsAuthenticated)
+						{
+							<div class=row>
+								<div class="col text-center">
+									<img src="https://th.bing.com/th/id/R.9c8c2aec39e796d21ffd3cfa944d33ea?rik=qkU4Xa6DF7Cdug&riu=http%3a%2f%2fwww.findmysoft.com%2fimg%2fnews%2finside%2fError-401_1460548854.jpg&ehk=W26gGih3OKrjY%2fE41sXFgFQHow5toa4RTxFFaFOTZfo%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Please authorized for this page" />
+								</div>
+							</div>
+						}
+						else
+						{
+							<p>You are not authorized to access this resource.</p>
+						}
+					</NotAuthorized>
+				</AuthorizeRouteView>
+			</Found>
+			<NotFound>
+				<LayoutView Layout="@typeof(MainLayout)">
+					<p>Sorry, there's nothing at this address.</p>
+				</LayoutView>
+			</NotFound>
+		</Router>
+	</CascadingAuthenticationState>
+</Error>
