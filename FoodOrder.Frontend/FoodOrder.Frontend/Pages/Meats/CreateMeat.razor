@@ -1,0 +1,42 @@
+﻿@page "/meats/create"
+@inject NavigationManager _navigation
+@inject Client _client
+
+<div class="row">
+	<div class="col">
+		<h1 class="text-info">Create Meat</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6">
+		<EditForm Model="_createMeatDto" OnValidSubmit="Create">
+			<DataAnnotationsValidator />
+			<div class="form-group">
+				<label>Meat Name: </label>
+				<div>
+					<InputText class="form-control" @bind-Value="_createMeatDto.Name" />
+					<ValidationMessage For="(() => _createMeatDto.Name)" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Meat Price: </label>
+				<div>
+					<InputNumber class="form-control" @bind-Value="_createMeatDto.Price"/>
+					<ValidationMessage For="(() => _createMeatDto.Price)"/>
+				</div>
+			</div>
+			<button class="btn btn-outline-primary">Save</button>
+		</EditForm>
+	</div>
+</div>
+
+@code {
+	private readonly CreateMeatDto _createMeatDto = new();
+
+	private async Task Create()
+	{
+		await _client.CreateMeatAsync("1", _createMeatDto);
+		_navigation.NavigateTo("/meats");
+	}
+}

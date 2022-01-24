@@ -18,11 +18,13 @@
 					<InputText class="form-control" @bind-Value="_beverageDto.Name" />
 					<ValidationMessage For="(() => _beverageDto.Name)" />
 				</div>
-			</div>
-			<label>Beverage Price: </label>
-			<div>
-				<InputNumber class="form-control" @bind-Value="_beverageDto.Price" />
-				<ValidationMessage For="(() => _beverageDto.Price)" />
+			</div >
+			<div class="form-group">
+				<label>Beverage Price: </label>
+				<div>
+					<InputNumber class="form-control" @bind-Value="_beverageDto.Price"/>
+					<ValidationMessage For="(() => _beverageDto.Price)"/>
+				</div>
 			</div>
 			<button class="btn btn-outline-primary">Save</button>
 		</EditForm>

@@ -1,0 +1,54 @@
+﻿@page "/soups"
+@inject Client _client
+@inject NavigationManager _navigation
+
+
+<div class="row align-items-center">
+	<div class="col text-left">
+		<h1>Menu</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateSoup">Create soup</button>
+	</div>
+</div>
+
+<FoodCollection Food="_soups" Header="@nameof(Soups)" Context="soup">
+	<IndividualItem>
+		<tr>
+			<td><a href="soups/@soup.Id">@soup.Name</a></td>
+			<td>@soup.Price $</td>
+			<td class="text-right">
+				<div>
+					<button class="btn p-0" @onclick="(() => UpdateSoup(soup))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></button>
+					<button class="btn p-0 ms-2" @onclick="(() => DeleteSoup(soup))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></button>
+				</div>
+			</td>
+		</tr>
+	</IndividualItem>
+</FoodCollection>
+
+@code {
+	private ICollection<SoupLookupDto> _soups;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await _client.GetAllSoupAsync("1");
+		_soups = response.Soups;
+	}
+
+	private void CreateSoup()
+	{
+		_navigation.NavigateTo("/soups/create");
+	}
+
+	private async Task DeleteSoup(SoupLookupDto soup)
+	{
+		await _client.DeleteSoupAsync(soup.Id, "1");
+		_soups.Remove(soup);
+	}
+
+	private void UpdateSoup(SoupLookupDto soup)
+	{
+		_navigation.NavigateTo($"/soups/{soup.Id}/update");
+	}
+}

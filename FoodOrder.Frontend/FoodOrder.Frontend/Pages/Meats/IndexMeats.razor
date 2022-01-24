@@ -1,0 +1,54 @@
+﻿@page "/meats"
+@inject Client _client
+@inject NavigationManager _navigation
+
+
+<div class="row align-items-center">
+	<div class="col text-left">
+		<h1>Menu</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateMeat">Create meat</button>
+	</div>
+</div>
+
+<FoodCollection Food="_meats" Header="@nameof(Meats)" Context="meat">
+	<IndividualItem>
+		<tr>
+			<td><a href="soups/@meat.Id">@meat.Name</a></td>
+			<td>@meat.Price $</td>
+			<td class="text-right">
+				<div>
+					<button class="btn p-0" @onclick="(() => UpdateMeat(meat))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></button>
+					<button class="btn p-0 ms-2" @onclick="(() => DeleteMeat(meat))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></button>
+				</div>
+			</td>
+		</tr>
+	</IndividualItem>
+</FoodCollection>
+
+@code {
+	private ICollection<MeatLookupDto> _meats;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await _client.GetAllMeatsAsync("1");
+		_meats = response.Meats;
+	}
+
+	private void CreateMeat()
+	{
+		_navigation.NavigateTo("/meats/create");
+	}
+
+	private async Task DeleteMeat(MeatLookupDto meat)
+	{
+		await _client.DeleteMeatAsync(meat.Id, "1");
+		_meats.Remove(meat);
+	}
+
+	private void UpdateMeat(MeatLookupDto meat)
+	{
+		_navigation.NavigateTo($"/meats/{meat.Id}/update");
+	}
+}
