@@ -5,6 +5,7 @@
 //----------------------
 
 using FoodOrder.Frontend;
+using System.ComponentModel.DataAnnotations;
 
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
@@ -2262,6 +2263,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2515,6 +2517,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }

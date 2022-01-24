@@ -1,0 +1,40 @@
+﻿@page "/beverages/create"
+@inject NavigationManager _navigation
+@inject Client _client
+
+<div class="row">
+	<div class="col">
+		<h1 class="text-info">Create Beverage</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6">
+		<EditForm Model="_beverageDto" OnValidSubmit="Create">
+			<DataAnnotationsValidator />
+			<div class="form-group">
+				<label>Beverage Name: </label>
+				<div>
+					<InputText class="form-control" @bind-Value="_beverageDto.Name" />
+					<ValidationMessage For="(() => _beverageDto.Name)" />
+				</div>
+			</div>
+			<label>Beverage Price: </label>
+			<div>
+				<InputNumber class="form-control" @bind-Value="_beverageDto.Price" />
+				<ValidationMessage For="(() => _beverageDto.Price)" />
+			</div>
+			<button class="btn btn-outline-primary">Save</button>
+		</EditForm>
+	</div>
+</div>
+
+@code {
+	private CreateBeverageDto _beverageDto = new();
+
+	private async Task Create()
+	{
+		await _client.CreateBeverageAsync("1", _beverageDto);
+		_navigation.NavigateTo("/beverages");
+	}
+}
