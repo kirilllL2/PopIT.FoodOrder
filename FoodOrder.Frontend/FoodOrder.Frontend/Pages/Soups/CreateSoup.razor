@@ -1,6 +1,7 @@
 ﻿@page "/soups/create"
 @inject NavigationManager _navigation
 @inject Client _client
+@inject IToastService _toast
 
 <div class="row">
 	<div class="col">
@@ -37,6 +38,7 @@
 	private async Task Create()
 	{
 		await _client.CreateSoupAsync("1", _createSoupDto);
+        _toast.ShowSuccess("Create Success!");
 		_navigation.NavigateTo("/soups");
 	}
 }

@@ -1,5 +1,6 @@
 ﻿@page "/beverages/{BeverageId:guid}/update"
-@inject Client _client;
+@inject Client _client
+@inject IToastService _toast
 
 <h1 class="text-info">Update Beverage</h1>
 
@@ -24,11 +25,6 @@
 				<button class="btn btn-outline-primary mt-3">Save</button>
 			</EditForm>
 		}
-
-		@if (message is not null)
-	   {
-			<div class="alert alert-success text-center py-2 mt-3">@message</div>
-	   }
 	</div>
 </div>
 
@@ -37,7 +33,6 @@
 	public Guid BeverageId { get; set; }
 
 	private UpdateBeverageDto _beverageDto;
-	private string message;
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -51,8 +46,7 @@
 
 	private async Task Update()
 	{
-		message = null;
 		await _client.UpdateBeverageAsync(BeverageId, "1", _beverageDto);
-		message = "Editing Success!";
+        _toast.ShowSuccess("Update Success!");
 	}
 }
