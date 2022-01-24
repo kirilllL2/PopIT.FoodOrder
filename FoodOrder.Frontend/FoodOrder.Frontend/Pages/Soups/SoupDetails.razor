@@ -1,0 +1,18 @@
+﻿@page "/soups/{SoupId:guid}"
+@inject Client _client;
+
+<h1>Beverage Details</h1>
+
+<IndividualSoup Soup="_soup" />
+
+@code {
+	[Parameter]
+	public Guid SoupId { get; set; }
+
+	private SoupDetailsVm _soup;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_soup = await _client.GetSoupByIdAsync(SoupId, "1");
+	}
+}

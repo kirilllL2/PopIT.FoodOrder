@@ -2276,6 +2276,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2288,6 +2289,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2317,6 +2319,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2530,6 +2533,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2542,6 +2546,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }
@@ -2554,6 +2559,7 @@ namespace FoodOrder.Frontend
         public string Name { get; set; }
 
         [Newtonsoft.Json.JsonProperty("price", Required = Newtonsoft.Json.Required.Always)]
+        [Range(0.01, double.PositiveInfinity)]
         public double Price { get; set; }
 
     }

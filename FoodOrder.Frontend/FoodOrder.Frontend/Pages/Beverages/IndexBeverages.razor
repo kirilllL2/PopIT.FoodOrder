@@ -2,7 +2,14 @@
 @inject Client _client
 @inject NavigationManager _navigation
 
-<h1>Menu</h1>
+<div class="row align-items-center">
+	<div class="col text-left">
+		<h1>Menu</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateBeverage">Create beverage</button>
+	</div>
+</div>
 
 <FoodCollection Food="_beverages" Header="@nameof(Beverages)" Context="beverage">
 	<IndividualItem>
@@ -26,6 +33,11 @@
 	{
 		var response = await _client.GetAllBeveragesAsync("1");
 		_beverages = response.Beverages;
+	}
+
+	private void CreateBeverage()
+	{
+		_navigation.NavigateTo($"/beverages/create");
 	}
 
 	private async Task DeleteBeverage(BeverageLookupDto beverage)
