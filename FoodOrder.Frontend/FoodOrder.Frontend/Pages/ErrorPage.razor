@@ -1,0 +1,9 @@
+﻿@page "/ErrorPage/{HttpStatusCode:int}"
+@using System.Net
+
+<h3>@HttpStatusCode</h3>
+
+@code {
+    [Parameter]
+    public int HttpStatusCode { get; set; }
+}

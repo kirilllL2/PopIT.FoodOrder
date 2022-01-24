@@ -13,7 +13,9 @@
 		</div>
 
 		<div class="content px-4">
-			@Body
+			<CustomErrorBoundary @ref="_errorBoundary">
+				@Body
+			</CustomErrorBoundary>
 		</div>
 	</div>
 </div>
@@ -24,3 +26,13 @@
 				SuccessClass="success-toast-override"
 				SuccessIcon="fa fa-thumbs-up"
 				ErrorIcon="fa fa-bug" />
+
+@code
+{
+	private ErrorBoundary? _errorBoundary;
+
+	protected override void OnParametersSet()
+	{
+		_errorBoundary?.Recover();
+	}
+}
