@@ -6,6 +6,8 @@
 
 using FoodOrder.Frontend;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
+using FoodOrder.Frontend.Attributes;
 
 #pragma warning disable 108 // Disable "CS0108 '{derivedDto}.ToJson()' hides inherited member '{dtoBase}.ToJson()'. Use the new keyword if hiding was intended."
 #pragma warning disable 114 // Disable "CS0114 '{derivedDto}.RaisePropertyChanged(String)' hides inherited member 'dtoBase.RaisePropertyChanged(String)'. To make the current member override that implementation, add the override keyword. Otherwise add the new keyword."
@@ -2298,15 +2300,19 @@ namespace FoodOrder.Frontend
     public partial class CreateOrderDto
     {
         [Newtonsoft.Json.JsonProperty("beverageId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [NotEmpty("Choose beverage")]
         public System.Guid BeverageId { get; set; }
 
         [Newtonsoft.Json.JsonProperty("garnishId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [NotEmpty("Choose garnish")]
         public System.Guid GarnishId { get; set; }
 
         [Newtonsoft.Json.JsonProperty("meatId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [NotEmpty("Choose meat")]
         public System.Guid MeatId { get; set; }
 
         [Newtonsoft.Json.JsonProperty("soupId", Required = Newtonsoft.Json.Required.DisallowNull, NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore)]
+        [NotEmpty("Choose soup")]
         public System.Guid SoupId { get; set; }
 
     }

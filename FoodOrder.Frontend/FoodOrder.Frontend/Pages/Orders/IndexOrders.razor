@@ -1,0 +1,82 @@
+﻿@page "/orders"
+@inject Client _client
+@inject NavigationManager _navigation
+@inject IToastService _toast
+
+<div class="row align-items-center">
+    <div class="col text-left">
+        <h1>Orders</h1>
+    </div>
+    <div class="col text-right">
+        <button class="btn btn-outline-primary" @onclick="CreateOrder">Create order</button>
+    </div>
+</div>
+
+@if (_orders is null)
+{
+	<div class="row">
+		<div class="col text-center">
+			<img src="https://th.bing.com/th/id/R.e1d70bd22f94d825cf2e1ad2fd8e9544?rik=HFhQMze629xkiw&riu=http%3a%2f%2fwww.miishoppers.com%2fskin%2ffrontend%2fapptha%2fsuperstore%2fimages%2floading_cart.gif&ehk=1dRV9u%2bUuL5jucGIMLHjtluYI8EeD683aE8UiJOOo38%3d&risl=&pid=ImgRaw&r=0"
+			 alt="Data loading..." />
+		</div>
+	</div>
+}
+else if (_orders.Count == 0)
+{
+	<div class="row">
+		<div class="col">
+			<img src="https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png" alt="Collection is empty" />
+		</div>
+	</div>
+}
+else
+{
+	<div class="table-responsive scrollbar">
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">IsCompleted</th>
+				<th class="text-right" scope="col">Actions</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var order in _orders)
+			{
+				<tr>
+					<td><a href="order/@order.Id">@order.Id</a></td>
+					<td>@order.IsCompleted</td>
+					<td class="text-right">
+						<div>
+							<button class="btn btn-outline-success" @onclick="(() => CompleteOrder(order))">Complete</button>
+						</div>
+					</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
+}
+
+
+@code {
+    private ICollection<OrderLookupDto> _orders;
+    
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await _client.GetAllOrdersAsync("1");
+		_orders = response.Orders;
+	}
+
+    private void CreateOrder()
+    {
+        _navigation.NavigateTo("/orders/create");
+    }
+	
+	private async Task CompleteOrder(OrderLookupDto order)
+	{
+		order.IsCompleted = true;
+		await _client.CompletedOrderAsync(order.Id, "1");
+		_toast.ShowSuccess("Order Success!");
+	}
+}
