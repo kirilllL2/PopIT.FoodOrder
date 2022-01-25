@@ -1,0 +1,54 @@
+﻿@page "/garnishes"
+@inject Client _client
+@inject NavigationManager _navigation
+
+
+<div class="row align-items-center">
+	<div class="col text-left">
+		<h1>Menu</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateGarnish">Create garnish</button>
+	</div>
+</div>
+
+<FoodCollection Food="_garnishes" Header="@nameof(Garnishes)" Context="garnish">
+	<IndividualItem>
+		<tr>
+			<td><a href="garnishes/@garnish.Id">@garnish.Name</a></td>
+			<td>@garnish.Price $</td>
+			<td class="text-right">
+				<div>
+					<button class="btn p-0" @onclick="(() => UpdateGarnish(garnish))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></button>
+					<button class="btn p-0 ms-2" @onclick="(() => DeleteGarnish(garnish))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></button>
+				</div>
+			</td>
+		</tr>
+	</IndividualItem>
+</FoodCollection>
+
+@code {
+	private ICollection<GarnishLookupDto> _garnishes;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await _client.GetAllGarnishesAsync("1");
+		_garnishes = response.Garnishes;
+	}
+
+	private void CreateGarnish()
+	{
+		_navigation.NavigateTo("/garnishes/create");
+	}
+
+	private async Task DeleteGarnish(GarnishLookupDto garnish)
+	{
+		await _client.DeleteGarnishAsync(garnish.Id, "1");
+		_garnishes.Remove(garnish);
+	}
+
+	private void UpdateGarnish(GarnishLookupDto garnish)
+	{
+		_navigation.NavigateTo($"/garnishes/{garnish.Id}/update");
+	}
+}

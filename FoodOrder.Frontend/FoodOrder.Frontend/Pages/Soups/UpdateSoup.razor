@@ -1,0 +1,54 @@
+﻿@page "/soups/{SoupId:guid}/update"
+@inject Client _client;
+@inject IToastService _toast;
+
+<h1 class="text-info">Update Soup</h1>
+
+<div class="row">
+    <div class="col">
+        @if (_soupDto is not null)
+        {
+            <EditForm Model="_soupDto" OnValidSubmit="Update">
+                <DataAnnotationsValidator/>
+                <div class="form-group">
+                    <label>Soup Name: </label>
+                    <div>
+                        <InputText class="form-control" @bind-Value="_soupDto.Name"/>
+                        <ValidationMessage For="(() => _soupDto.Name)"/>
+                    </div>
+                </div>
+                <label>Soup Price: </label>
+                <div>
+                    <InputNumber class="form-control" @bind-Value="_soupDto.Price"/>
+                    <ValidationMessage For="(() => _soupDto.Price)"/>
+                </div>
+                <button class="btn btn-outline-primary mt-3">Save</button>
+            </EditForm>
+        }
+    </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public Guid SoupId { get; set; }
+
+    private UpdateSoupDto _soupDto;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var soup = await _client.GetSoupByIdAsync(SoupId, "1");
+        _soupDto = new UpdateSoupDto
+        {
+            Name = soup.Name,
+            Price = soup.Price
+        };
+    }
+
+    private async Task Update()
+    {
+        await _client.UpdateSoupAsync(SoupId, "1", _soupDto);
+        _toast.ShowSuccess("Update Success!");
+    }
+
+}

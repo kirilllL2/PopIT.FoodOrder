@@ -1,0 +1,53 @@
+﻿@page "/beverages"
+@inject Client _client
+@inject NavigationManager _navigation
+
+<div class="row align-items-center">
+	<div class="col text-left">
+		<h1>Menu</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateBeverage">Create beverage</button>
+	</div>
+</div>
+
+<FoodCollection Food="_beverages" Header="@nameof(Beverages)" Context="beverage">
+	<IndividualItem>
+		<tr>
+			<td><a href="beverages/@beverage.Id">@beverage.Name</a></td>
+			<td>@beverage.Price $</td>
+			<td class="text-right">
+				<div>
+					<button class="btn p-0" @onclick="(() => UpdateBeverage(beverage))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit"><i class="far fa-edit"></i></button>
+					<button class="btn p-0 ms-2" @onclick="(() => DeleteBeverage(beverage))" type="button" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i class="far fa-trash-alt"></i></button>
+				</div>
+			</td>
+		</tr>
+	</IndividualItem>
+</FoodCollection>
+
+@code {
+	private ICollection<BeverageLookupDto> _beverages;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var response = await _client.GetAllBeveragesAsync("1");
+		_beverages = response.Beverages;
+	}
+
+	private void CreateBeverage()
+	{
+		_navigation.NavigateTo($"/beverages/create");
+	}
+
+	private async Task DeleteBeverage(BeverageLookupDto beverage)
+	{
+		await _client.DeleteBeverageAsync(beverage.Id, "1");
+		_beverages.Remove(beverage);
+	}
+
+	private void UpdateBeverage(BeverageLookupDto beverage)
+	{
+		_navigation.NavigateTo($"/beverages/{beverage.Id}/update");
+	}
+}

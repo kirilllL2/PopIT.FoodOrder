@@ -1,0 +1,44 @@
+﻿@page "/soups/create"
+@inject NavigationManager _navigation
+@inject Client _client
+@inject IToastService _toast
+
+<div class="row">
+	<div class="col">
+		<h1 class="text-info">Create Soup</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6">
+		<EditForm Model="_createSoupDto" OnValidSubmit="Create">
+			<DataAnnotationsValidator />
+			<div class="form-group">
+				<label>Soup Name: </label>
+				<div>
+					<InputText class="form-control" @bind-Value="_createSoupDto.Name" />
+					<ValidationMessage For="(() => _createSoupDto.Name)" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Soup Price: </label>
+				<div>
+					<InputNumber class="form-control" @bind-Value="_createSoupDto.Price"/>
+					<ValidationMessage For="(() => _createSoupDto.Price)"/>
+				</div>
+			</div>
+			<button class="btn btn-outline-primary">Save</button>
+		</EditForm>
+	</div>
+</div>
+
+@code {
+	private readonly CreateSoupDto _createSoupDto = new();
+
+	private async Task Create()
+	{
+		await _client.CreateSoupAsync("1", _createSoupDto);
+        _toast.ShowSuccess("Create Success!");
+		_navigation.NavigateTo("/soups");
+	}
+}
