@@ -1,0 +1,18 @@
+﻿@page "/garnishes/{GarnishId:guid}"
+@inject Client _client;
+
+<h1>Meat Details</h1>
+
+<IndividualGarnish Garnish="_garnish" />
+
+@code {
+	[Parameter]
+	public Guid GarnishId { get; set; }
+
+	private GarnishDetailsVm _garnish;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_garnish = await _client.GetGarnishByIdAsync(GarnishId, "1");
+	}
+}
