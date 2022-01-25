@@ -4,9 +4,9 @@
     <title>Login</title>
 </head>
 <div class="center">
-    <input type="hidden" asp-for="ReturnUrl"/>
     <h1>Register</h1>
     <form asp-controller="Auth" asp-action="Register" method="post">
+        <input type="hidden" asp-for="ReturnUrl"/>
         <div class="txt_field">
             <input type="text" required asp-for="Username">
             <span asp-validation-for="Username"></span>

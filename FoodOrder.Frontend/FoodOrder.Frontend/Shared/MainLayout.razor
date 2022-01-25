@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+@using Blazored.Toast.Configuration
+
+<div class="page">
+	<div class="sidebar">
+		<NavMenu />
+	</div>
+
+	<div class="main">
+		<div class="top-row px-4 auth">
+			<LoginDisplay />
+		</div>
+
+		<div class="content px-4">
+			<CustomErrorBoundary @ref="_errorBoundary">
+				@Body
+			</CustomErrorBoundary>
+		</div>
+	</div>
+</div>
+
+<BlazoredToasts Position="ToastPosition.BottomRight"
+				Timeout="10"
+				IconType="IconType.FontAwesome"
+				SuccessClass="success-toast-override"
+				SuccessIcon="fa fa-thumbs-up"
+				ErrorIcon="fa fa-bug" />
+
+@code
+{
+	private ErrorBoundary? _errorBoundary;
+
+	protected override void OnParametersSet()
+	{
+		_errorBoundary?.Recover();
+	}
+}

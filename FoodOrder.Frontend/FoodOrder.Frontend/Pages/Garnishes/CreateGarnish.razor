@@ -1,0 +1,44 @@
+﻿@page "/garnishes/create"
+@inject NavigationManager _navigation
+@inject Client _client
+@inject IToastService _toast
+
+<div class="row">
+	<div class="col">
+		<h1 class="text-info">Create Garnish</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-6">
+		<EditForm Model="_createGarnishDto" OnValidSubmit="Create">
+			<DataAnnotationsValidator />
+			<div class="form-group">
+				<label>Garnish Name: </label>
+				<div>
+					<InputText class="form-control" @bind-Value="_createGarnishDto.Name" />
+					<ValidationMessage For="(() => _createGarnishDto.Name)" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Garnish Price: </label>
+				<div>
+					<InputNumber class="form-control" @bind-Value="_createGarnishDto.Price"/>
+					<ValidationMessage For="(() => _createGarnishDto.Price)"/>
+				</div>
+			</div>
+			<button class="btn btn-outline-primary">Save</button>
+		</EditForm>
+	</div>
+</div>
+
+@code {
+	private readonly CreateGarnishDto _createGarnishDto = new();
+
+	private async Task Create()
+	{
+		await _client.CreateGarnishAsync("1", _createGarnishDto);
+        _toast.ShowSuccess("Create Success!");
+		_navigation.NavigateTo("/garnishes");
+	}
+}

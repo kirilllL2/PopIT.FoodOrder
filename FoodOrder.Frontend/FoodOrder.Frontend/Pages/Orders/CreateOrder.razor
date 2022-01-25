@@ -1,0 +1,106 @@
+﻿@page "/orders/create"
+@inject NavigationManager _navigation
+@inject Client _client
+@inject IToastService _toast
+
+<div class="row">
+    <div class="col">
+        <h1 class="text-info">Create Order</h1>
+    </div>
+</div>
+
+@if (!IsDownloadComplete)
+{
+    <div class="row">
+        <div class="col text-center">
+            <img src="https://th.bing.com/th/id/R.e1d70bd22f94d825cf2e1ad2fd8e9544?rik=HFhQMze629xkiw&riu=http%3a%2f%2fwww.miishoppers.com%2fskin%2ffrontend%2fapptha%2fsuperstore%2fimages%2floading_cart.gif&ehk=1dRV9u%2bUuL5jucGIMLHjtluYI8EeD683aE8UiJOOo38%3d&risl=&pid=ImgRaw&r=0"
+                 alt="Data loading..."/>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-6">
+            <EditForm Model="_createOrderDto" OnValidSubmit="Create">
+                <DataAnnotationsValidator/>
+                <div class="form-group">
+                    <label>Select beverage: </label>
+                    <InputSelect @bind-Value="_createOrderDto.BeverageId" class="custom-select d-block w-50">
+                        <option disabled value="@Guid.Empty">Choose...</option>
+                        @foreach (var beverage in _beverages)
+                        {
+                            <option value="@beverage.Id">@beverage.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="(() => _createOrderDto.BeverageId)"/>
+                </div>
+                <div class="form-group">
+                    <label>Select garnish: </label>
+                    <InputSelect @bind-Value="_createOrderDto.GarnishId" class="custom-select d-block w-50">
+                        <option disabled value="@Guid.Empty">Choose...</option>
+                        @foreach (var garnish in _garnishes)
+                        {
+                            <option value="@garnish.Id">@garnish.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="(() => _createOrderDto.GarnishId)"/>
+                </div>
+                <div class="form-group">
+                    <label>Select meat: </label>
+                    <InputSelect @bind-Value="_createOrderDto.MeatId" class="custom-select d-block w-50">
+                        <option disabled value="@Guid.Empty">Choose...</option>
+                        @foreach (var meat in _meats)
+                        {
+                            <option value="@meat.Id">@meat.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="(() => _createOrderDto.MeatId)"/>
+                </div>
+                <div class="form-group">
+                    <label>Select soup: </label>
+                    <InputSelect @bind-Value="_createOrderDto.SoupId" class="custom-select d-block w-50">
+                        <option disabled value="@Guid.Empty">Choose...</option>
+                        @foreach (var soup in _soups)
+                        {
+                            <option value="@soup.Id">@soup.Name</option>
+                        }
+                    </InputSelect>
+                    <ValidationMessage For="(() => _createOrderDto.SoupId)"/>
+                </div>
+                <button class="btn btn-outline-primary">Create order</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+@code {
+    private readonly CreateOrderDto _createOrderDto = new();
+
+    private bool IsDownloadComplete =>
+        _beverages is not null
+        && _garnishes is not null
+        && _meats is not null
+        && _soups is not null;
+
+    private ICollection<BeverageLookupDto> _beverages;
+    private ICollection<GarnishLookupDto> _garnishes;
+    private ICollection<MeatLookupDto> _meats;
+    private ICollection<SoupLookupDto> _soups;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _beverages = (await _client.GetAllBeveragesAsync("1")).Beverages;
+        _garnishes = (await _client.GetAllGarnishesAsync("1")).Garnishes;
+        _meats = (await _client.GetAllMeatsAsync("1")).Meats;
+        _soups = (await _client.GetAllSoupAsync("1")).Soups;
+    }
+
+    private async Task Create()
+    {
+        await _client.CreateOrderAsync("1", _createOrderDto);
+        _toast.ShowSuccess("Create Success!");
+        _navigation.NavigateTo("/orders");
+    }
+
+}

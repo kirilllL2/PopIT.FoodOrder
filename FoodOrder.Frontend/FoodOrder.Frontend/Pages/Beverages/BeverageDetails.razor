@@ -1,0 +1,18 @@
+﻿@page "/beverages/{BeverageId:guid}"
+@inject Client _client;
+
+<h1>Beverage Details</h1>
+
+<IndividualBeverage Beverage="_beverage" />
+
+@code {
+	[Parameter]
+	public Guid BeverageId { get; set; }
+
+	private BeverageDetailsVm _beverage;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_beverage = await _client.GetBeverageByIdAsync(BeverageId, "1");
+	}
+}

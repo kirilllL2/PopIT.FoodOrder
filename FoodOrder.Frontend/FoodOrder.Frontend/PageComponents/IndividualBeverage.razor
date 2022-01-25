@@ -1,0 +1,44 @@
+﻿@if (Beverage is null)
+{
+	<div class="row">
+		<div class="col">
+			<img src="https://i.gifer.com/origin/b1/b128497bc8d6fcfefb93b88b260561a7_w200.gif" alt="Data loading..." />
+		</div>
+	</div>
+}
+else
+{
+	<div class="table-responsive scrollbar">
+		<table class="table table-bordered overflow-hidden">
+			<colgroup>
+				<col class="bg-light" />
+				<col />
+			</colgroup>
+			<thead>
+				<tr class="btn-reveal-trigger">
+					<th scope="col">Name</th>
+					<th scope="col">Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="btn-reveal-trigger">
+					<td>@nameof(Beverage.Id)</td>
+					<td>@Beverage.Id</td>
+				</tr>
+				<tr class="btn-reveal-trigger">
+					<td>@nameof(Beverage.Name)</td>
+					<td>@Beverage.Name</td>
+				</tr>
+				<tr class="btn-reveal-trigger">
+					<td>@nameof(Beverage.Price)</td>
+					<td>@Beverage.Price</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+}
+
+@code {
+	[Parameter]
+	public BeverageDetailsVm Beverage { get; set; }
+}

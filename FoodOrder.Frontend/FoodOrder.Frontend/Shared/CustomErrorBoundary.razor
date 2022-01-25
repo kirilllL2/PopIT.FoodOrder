@@ -1,0 +1,67 @@
+﻿@using System.Net
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@inherits ErrorBoundary
+@inject NavigationManager Navigation
+
+
+@if (CurrentException is null)
+{
+	@ChildContent
+}
+else if (ErrorContent is not null)
+{
+	@ErrorContent(CurrentException)
+}
+else if (exceptionCode is not null)
+{
+	<div class="row">
+		<div class="col text-center">
+			@switch (exceptionCode)
+			{
+				case HttpStatusCode.NotFound:
+					<img src="https://th.bing.com/th/id/OIP.Nm2mAfovXCzRHTT7881Y7gHaEL?pid=ImgDet&rs=1" alt="Not Found" />
+					break;
+				case HttpStatusCode.BadRequest:
+					<img src="https://th.bing.com/th/id/OIP.GXjkpMCM1mhUaTTN2YU0kwHaE8?pid=ImgDet&rs=1" alt="Bad request" />
+					break;
+				case HttpStatusCode.Unauthorized:
+					<img src="https://th.bing.com/th/id/R.9c8c2aec39e796d21ffd3cfa944d33ea?rik=qkU4Xa6DF7Cdug&riu=http%3a%2f%2fwww.findmysoft.com%2fimg%2fnews%2finside%2fError-401_1460548854.jpg&ehk=W26gGih3OKrjY%2fE41sXFgFQHow5toa4RTxFFaFOTZfo%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Please authorized for this page" />
+					break;
+				default:
+					<img src="https://th.bing.com/th/id/R.7946ed830a474acc2cba3972bc10a538?rik=OqZ0pKVyVecAiQ&pid=ImgRaw&r=0" alt="Error" />
+					break;
+			}
+		</div>
+	</div>
+}
+else
+{
+	<div>
+		Error
+	</div>
+}
+
+@code {
+	private HttpStatusCode? exceptionCode;
+
+	protected override Task OnErrorAsync(Exception exception)
+	{
+		switch (exception)
+		{
+			case ApiException apiException:
+				exceptionCode = (HttpStatusCode)apiException.StatusCode;
+				break;
+			case AccessTokenNotAvailableException:
+				exceptionCode = HttpStatusCode.Unauthorized;
+				break;
+			default:
+				break;
+		}
+		return base.OnErrorAsync(exception);
+	}
+
+	public new void Recover()
+	{
+		base.Recover();
+	}
+}
