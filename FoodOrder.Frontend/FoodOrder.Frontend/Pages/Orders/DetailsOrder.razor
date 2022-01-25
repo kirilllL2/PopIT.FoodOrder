@@ -32,11 +32,11 @@ else
                 <td>@_order.Id</td>
             </tr>
             <tr class="btn-reveal-trigger">
-                <td>@nameof(_order.IsCompleted)</td>
+                <td>Completed</td>
                 <td>@_order.IsCompleted</td>
             </tr>
             <tr class="btn-reveal-trigger">
-                <td>@nameof(_order.UserId)</td>
+                <td>Сustomer</td>
                 <td>@_order.UserId</td>
             </tr>
             <tr class="btn-reveal-trigger">
@@ -56,16 +56,19 @@ else
                 <td>@_order.Soup.Name</td>
             </tr>
             <tr class="btn-reveal-trigger">
-                <td>@nameof(_order.OrderTime)</td>
-                <td>@_order.OrderTime</td>
+                <td>Order time</td>
+                <td>@_order.OrderTime.ToString("f")</td>
             </tr>
             <tr class="btn-reveal-trigger">
-                <td>@nameof(_order.TotalPrice)</td>
-                <td>@_order.TotalPrice</td>
+                <td>Price</td>
+                <td>@_order.TotalPrice $</td>
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-outline-success" @onclick="(CompleteOrder)">Complete order</button>
+        @if(!_order.IsCompleted)
+        {
+            <button class="btn btn-outline-success" @onclick="(CompleteOrder)">Complete order</button>
+        }
     </div>
 }
 
@@ -85,6 +88,6 @@ else
     {
         _order.IsCompleted = true;
         await _client.CompletedOrderAsync(_order.Id, "1");
-        _toast.ShowSuccess("Order Success!");
+        _toast.ShowSuccess($"Order {_order.Id} Completed!");
     }
-}
+}   

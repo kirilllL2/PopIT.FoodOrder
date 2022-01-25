@@ -4,12 +4,12 @@
 @inject IToastService _toast
 
 <div class="row align-items-center">
-    <div class="col text-left">
-        <h1>Orders</h1>
-    </div>
-    <div class="col text-right">
-        <button class="btn btn-outline-primary" @onclick="CreateOrder">Create order</button>
-    </div>
+	<div class="col text-left">
+		<h1>Orders</h1>
+	</div>
+	<div class="col text-right">
+		<button class="btn btn-outline-primary" @onclick="CreateOrder">Create order</button>
+	</div>
 </div>
 
 @if (_orders is null)
@@ -32,27 +32,38 @@ else if (_orders.Count == 0)
 else
 {
 	<div class="table-responsive scrollbar">
-		<table class="table table-striped">
+		<table class="table">
 			<thead>
-			<tr>
-				<th scope="col">Id</th>
-				<th scope="col">IsCompleted</th>
-				<th class="text-right" scope="col">Actions</th>
-			</tr>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">IsCompleted</th>
+					<th class="text-right" scope="col">Actions</th>
+				</tr>
 			</thead>
 			<tbody>
-			@foreach (var order in _orders)
-			{
-				<tr>
-					<td><a href="order/@order.Id">@order.Id</a></td>
-					<td>@order.IsCompleted</td>
-					<td class="text-right">
-						<div>
-							<button class="btn btn-outline-success" @onclick="(() => CompleteOrder(order))">Complete</button>
-						</div>
-					</td>
-				</tr>
-			}
+				@foreach (var order in _orders.OrderBy(o => o.IsCompleted))
+				{
+					@if (order.IsCompleted)
+					{
+						itemStyle = "alert-success";
+					}
+					else
+					{
+						itemStyle = string.Empty;
+					}
+					<tr class="@itemStyle">
+						<td><a href="order/@order.Id">@order.Id</a></td>
+						<td>@order.IsCompleted</td>
+						<td class="text-right">
+							@if(!order.IsCompleted)
+							{
+								<div>
+									<button class="btn btn-outline-success" @onclick="(() => CompleteOrder(order))">Complete</button>
+								</div>
+							}
+						</td>
+					</tr>
+				}
 			</tbody>
 		</table>
 	</div>
@@ -60,23 +71,25 @@ else
 
 
 @code {
-    private ICollection<OrderLookupDto> _orders;
-    
+	private string itemStyle = string.Empty;
+
+	private ICollection<OrderLookupDto> _orders;
+
 	protected override async Task OnInitializedAsync()
 	{
 		var response = await _client.GetAllOrdersAsync("1");
 		_orders = response.Orders;
 	}
 
-    private void CreateOrder()
-    {
-        _navigation.NavigateTo("/orders/create");
-    }
-	
+	private void CreateOrder()
+	{
+		_navigation.NavigateTo("/orders/create");
+	}
+
 	private async Task CompleteOrder(OrderLookupDto order)
 	{
 		order.IsCompleted = true;
 		await _client.CompletedOrderAsync(order.Id, "1");
-		_toast.ShowSuccess("Order Success!");
+		_toast.ShowSuccess($"Order {order.Id} Completed!");
 	}
 }
